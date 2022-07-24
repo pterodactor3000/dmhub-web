@@ -3,8 +3,6 @@ import { Subject } from 'rxjs';
 
 @Component({
   template: '',
-  styles: [],
-  selector: '',
 })
 export class BaseComponent implements OnDestroy {
   unsubscribe = new Subject<void>();
