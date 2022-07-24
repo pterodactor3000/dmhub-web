@@ -1,8 +1,9 @@
 import { environment } from './../../environments/environment';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { QueryParams } from './params';
+import { Observable, of } from 'rxjs';
+import { QueryParams, ResponsesTypes } from './types';
+import { mockedObjects } from './mock-data';
 
 @Injectable({
   providedIn: 'root',
@@ -10,8 +11,10 @@ import { QueryParams } from './params';
 export class HttpService {
   constructor(private http: HttpClient) {}
 
-  get(query: QueryParams): Observable<any> {
-    return this.http.get<any>(`${this.getBaseUrl()}query`, {
+  get(query: QueryParams): Observable<ResponsesTypes> {
+    return of(mockedObjects);
+
+    return this.http.get<ResponsesTypes>(`${this.getBaseUrl()}query`, {
       params: this.buildParams(query),
     });
   }
