@@ -5,10 +5,10 @@ import { Subject } from 'rxjs';
   template: '',
 })
 export class BaseComponent implements OnDestroy {
-  unsubscribe = new Subject<void>();
+  unsubscribeSubject = new Subject<void>();
 
   ngOnDestroy(): void {
-    this.unsubscribe.next();
-    this.unsubscribe.complete();
+    this.unsubscribeSubject.next();
+    this.unsubscribeSubject.complete();
   }
 }
