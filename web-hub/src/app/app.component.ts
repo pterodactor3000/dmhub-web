@@ -1,10 +1,11 @@
+import { environment } from './../environments/environment';
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
+  selector: 'wbhb-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'web-hub';
+  title = environment.title;
 }

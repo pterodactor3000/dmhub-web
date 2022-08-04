@@ -1,3 +1,4 @@
+import { MaterialModule } from 'src/app/material.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -9,10 +10,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ComponentsModule } from './components/components.module';
 import { HttpService } from './services/http.service';
 import { HttpClientModule } from '@angular/common/http';
+import { WbHbModule } from './wb-hb.module';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
+    WbHbModule,
     BrowserModule,
     AppRoutingModule,
     ComponentsModule,

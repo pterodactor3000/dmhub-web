@@ -1,3 +1,12 @@
-<p>home works!</p>
+<section>
+  <form #gameAccessForm="ngForm" (ngSubmit)="onSubmit()">
+    <wbhb-input [appearance]="'fill'" [label]="inputLabel" [(ngModel)]="inputValue" name="name"></wbhb-input>
 
-{{ data | json }}
+    <wbhb-button [attributes]="{type: 'raised-button', color: 'primary', label: 'Connect'}">
+    </wbhb-button>
+  </form>
+</section>
+
+<section *ngIf="data">
+  <wbhb-game [game]="data"></wbhb-game>
+</section>
