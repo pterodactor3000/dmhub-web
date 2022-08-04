@@ -4,7 +4,7 @@ import { FormControl } from '@angular/forms';
 export type QueryParamsKeys = 'gameid' | 'type' | 'id' | 'pretty';
 export type DataObjectKeys = 'object' | 'desc';
 export type CharacterKeys = 'name' | 'owner' | 'summaryDescription' | 'id';
-export type CharactersResponseKeys =
+export type GameResponseKeys =
   | 'characters'
   | 'coverart'
   | 'description'
@@ -35,9 +35,10 @@ export type InputKeys =
   | 'week';
 export type TypeValueKeys = 'type' | 'value' | 'icon' | 'align' | 'color';
 export type InputAdditionalFieldsKeys = 'prefix' | 'suffix' | 'hint';
+export type ErrorResponseKeys = 'message' | 'type';
 
 /* Key for general get */
-export type ResponsesTypes = DataObjectsResponse | CharactersResponse;
+export type ResponsesTypes = DataObjectsResponse | GameResponse | ErrorResponse;
 
 /* Types with keys for indexing */
 export type QueryParams = {
@@ -57,8 +58,12 @@ export type DataObjectsResponse = {
   objects: DataObject[];
 };
 
-export type CharactersResponse = {
-  [key in CharactersResponseKeys]: Character[] | string;
+export type GameResponse = {
+  [key in GameResponseKeys]: Character[] | string;
+};
+
+export type ErrorResponse = {
+  [key in ErrorResponseKeys]: string;
 };
 
 /* Components attributes */

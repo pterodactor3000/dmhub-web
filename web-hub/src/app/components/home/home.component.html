@@ -1,4 +1,12 @@
-<wbhb-input [appearance]="'fill'" [label]="inputLabel" [value]="inputValue"></wbhb-input>
-<wbhb-button [attributes]="{type: 'raised-button', color: 'primary', label: 'Connect'}" (click)="onClick()">
-</wbhb-button>
-<!-- {{ data | json }} -->
+<section>
+  <form #gameAccessForm="ngForm" (ngSubmit)="onSubmit()">
+    <wbhb-input [appearance]="'fill'" [label]="inputLabel" [(ngModel)]="inputValue" name="name"></wbhb-input>
+
+    <wbhb-button [attributes]="{type: 'raised-button', color: 'primary', label: 'Connect'}">
+    </wbhb-button>
+  </form>
+</section>
+
+<section *ngIf="data">
+  <wbhb-game [game]="data"></wbhb-game>
+</section>

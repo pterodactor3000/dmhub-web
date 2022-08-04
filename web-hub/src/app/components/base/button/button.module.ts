@@ -1,12 +1,11 @@
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { ButtonComponent } from './button.component';
-import { MaterialModule } from 'src/app/material.module';
+import { WbHbModule } from 'src/app/wb-hb.module';
 
 @NgModule({
   declarations: [ButtonComponent],
-  imports: [CommonModule, ReactiveFormsModule, FormsModule, MaterialModule],
+  imports: [WbHbModule, ReactiveFormsModule, FormsModule],
   exports: [ButtonComponent],
 })
 export class ButtonModule {}

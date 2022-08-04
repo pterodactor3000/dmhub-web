@@ -1,7 +1,12 @@
 import { Component } from '@angular/core';
 import { takeUntil } from 'rxjs';
 import { HttpService } from 'src/app/services/http.service';
-import { DataObjectsResponse } from 'src/app/services/types';
+import {
+  ResponsesTypes,
+  GameResponse,
+  ErrorResponse,
+  Character,
+} from 'src/app/services/types';
 import { BaseComponent } from '../base/base.component';
 
 @Component({
@@ -10,16 +15,17 @@ import { BaseComponent } from '../base/base.component';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent extends BaseComponent {
-  data!: DataObjectsResponse;
+  data!: GameResponse;
+  characters!: Character[];
 
   inputLabel = 'Provide game id...';
-  inputValue = '';
+  inputValue = 'LittleEpicTemperamentalElf';
 
   constructor(private hubService: HttpService) {
     super();
   }
 
-  onClick(): void {
+  onSubmit(): void {
     this.hubService
       .get({
         gameid: this.inputValue, //LittleEpicTemperamentalElf
@@ -28,9 +34,20 @@ export class HomeComponent extends BaseComponent {
         pretty: true,
       })
       .pipe(takeUntil(this.unsubscribeSubject))
-      .subscribe((res) => {
-        this.data = res as DataObjectsResponse;
-        console.log(res);
+      .subscribe({
+        next: (res: ResponsesTypes) => {
+          if (this.isError(res)) {
+            window.alert((res as ErrorResponse)['message']);
+          }
+          this.data = res as GameResponse;
+        },
       });
+  }
+
+  private isError(response: ResponsesTypes): boolean {
+    return (
+      Object.keys(response).includes('type') &&
+      Object.values(response).includes('error')
+    );
   }
 }
