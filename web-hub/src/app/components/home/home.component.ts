@@ -15,6 +15,7 @@ import { BaseComponent } from '../base/base.component';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent extends BaseComponent {
+  loading!: boolean;
   data!: GameResponse;
   characters!: Character[];
 
@@ -26,6 +27,7 @@ export class HomeComponent extends BaseComponent {
   }
 
   onSubmit(): void {
+    this.loading = true;
     this.hubService
       .get({
         gameid: this.inputValue, //LittleEpicTemperamentalElf
@@ -40,6 +42,7 @@ export class HomeComponent extends BaseComponent {
             window.alert((res as ErrorResponse)['message']);
           }
           this.data = res as GameResponse;
+          this.loading = false;
         },
       });
   }
