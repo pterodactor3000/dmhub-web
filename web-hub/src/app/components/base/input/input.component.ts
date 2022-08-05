@@ -6,7 +6,6 @@ import {
   Input,
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { MatFormFieldAppearance } from '@angular/material/form-field';
 
 @Component({
   selector: 'wbhb-input',
@@ -22,7 +21,6 @@ import { MatFormFieldAppearance } from '@angular/material/form-field';
   ],
 })
 export class InputComponent implements ControlValueAccessor {
-  @Input() appearance: MatFormFieldAppearance = 'fill';
   @Input() label!: string;
   @Input() name: string = 'Name';
 

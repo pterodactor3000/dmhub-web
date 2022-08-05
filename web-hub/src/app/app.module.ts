@@ -1,4 +1,3 @@
-import { MaterialModule } from 'src/app/material.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 

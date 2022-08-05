@@ -1,5 +1,2 @@
-<mat-form-field [appearance]="appearance">
-  <mat-label>{{ label }}</mat-label>
-  <input #inputElement="ngModel" matInput type='text' [ngModel]="value" [name]="name"
-    (ngModelChange)="onModelChange($event)">
-</mat-form-field>
+<label>{{ label }}</label>
+<input #inputElement="ngModel" type='text' [ngModel]="value" [name]="name" (ngModelChange)="onModelChange($event)">

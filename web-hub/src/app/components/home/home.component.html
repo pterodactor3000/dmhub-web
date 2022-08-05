@@ -1,6 +1,6 @@
 <section>
   <form #gameAccessForm="ngForm" (ngSubmit)="onSubmit()">
-    <wbhb-input [appearance]="'fill'" [label]="inputLabel" [(ngModel)]="inputValue" name="name"></wbhb-input>
+    <wbhb-input [label]="inputLabel" [(ngModel)]="inputValue" name="name"></wbhb-input>
 
     <wbhb-button [attributes]="{type: 'raised-button', color: 'primary', label: 'Connect'}">
     </wbhb-button>
