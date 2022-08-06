@@ -1,14 +1,6 @@
 <section>
-  <form #gameAccessForm="ngForm" (ngSubmit)="onSubmit()">
-    <wbhb-input [label]="inputLabel" [(ngModel)]="inputValue" name="name"></wbhb-input>
-
-    <wbhb-button [attributes]="{type: 'raised-button', color: 'primary', label: 'Connect'}">
-    </wbhb-button>
-  </form>
-</section>
-
-<section *ngIf="data">
-  <wbhb-game [game]="data"></wbhb-game>
+  <a [routerLink]="['/game']">Game search</a>
+  <a [routerLink]="['/module']">Module search</a>
 </section>
 
 <wbhb-loader *ngIf="loading"></wbhb-loader>

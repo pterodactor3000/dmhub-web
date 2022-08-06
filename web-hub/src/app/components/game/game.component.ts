@@ -1,22 +1,21 @@
-import { GameResponse } from './../../services/types.d';
-import { Component, Input } from '@angular/core';
-import { Character } from 'src/app/services/types';
+import { BaseComponent } from './../base/base.component';
+import { Component } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'wbhb-game',
   templateUrl: './game.component.html',
   styleUrls: ['./game.component.scss'],
 })
-export class GameComponent {
-  @Input() set game(value: GameResponse) {
-    this._game = value as GameResponse;
-    this.characters = (value as GameResponse).characters as Character[];
+export class GameComponent extends BaseComponent {
+  inputLabel = 'Provide game id...';
+  inputValue = 'LittleEpicTemperamentalElf';
+
+  constructor(private router: Router, private route: ActivatedRoute) {
+    super();
   }
 
-  get game() {
-    return this._game;
+  onSubmit(): void {
+    this.router.navigate([`${this.inputValue}`], { relativeTo: this.route });
   }
-
-  private _game!: GameResponse;
-  characters!: Character[];
 }

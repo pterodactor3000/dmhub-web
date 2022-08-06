@@ -1,15 +1,6 @@
-<section>
-  <p><b>{{ game.description }}</b><i> by {{ game.ownerDisplayName }}</i></p>
-  <p>{{ game.descriptionDetails }}</p>
-</section>
+<form #gameAccessForm="ngForm" (ngSubmit)="onSubmit()">
+  <wbhb-input [label]="inputLabel" [(ngModel)]="inputValue" name="name"></wbhb-input>
 
-<section *ngIf="characters?.length">
-  <p>Characters: </p>
-  <div *ngFor="let character of characters">
-    <wbhb-character [character]="character"></wbhb-character>
-  </div>
-</section>
-
-<section>
-  <img [src]="game.coverart">
-</section>
+  <wbhb-button [attributes]="{type: 'raised-button', color: 'primary', label: 'Connect'}">
+  </wbhb-button>
+</form>
