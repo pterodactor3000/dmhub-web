@@ -1,6 +1,6 @@
-<section>
-  <a [routerLink]="['/game']">Game search</a>
-  <a [routerLink]="['/module']">Module search</a>
+<section class="home-navigation">
+  <a class="home-navigation__game home-navigation__background" [routerLink]="['/game']">Game search</a>
+  <a class="home-navigation__module home-navigation__background" [routerLink]="['/module']">Module search</a>
 </section>
 
 <wbhb-loader *ngIf="loading"></wbhb-loader>

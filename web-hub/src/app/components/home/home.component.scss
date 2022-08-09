@@ -1,0 +1,44 @@
+$tasha-url: url('../../../assets/backdrops/tashas-cauldron-of-games.jpg');
+$annihilation-url: url('../../../assets/backdrops/modules-of-annihilation.jpg');
+
+.home-navigation {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  overflow: hidden;
+
+  &__background {
+    background-blend-mode: multiply;
+    transition: all 0.5s;
+    z-index: 2;
+    font-family: 'Bontang';
+    font-size: 6rem;
+    color: #f0f0f0;
+    text-shadow: 0 0 2rem #3E5151;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    &:hover {
+      transform: scale(1.1);
+      z-index: 5;
+    }
+  }
+
+  &__game {
+    background: #2C3E50, $tasha-url;
+    background: -webkit-linear-gradient(to right, #FD746C, #2C3E50), $tasha-url;
+    background: linear-gradient(to right, #FD746C, #2C3E50), $tasha-url;
+    background-size: cover;
+  }
+
+  &__module {
+    background: #3E5151, $annihilation-url;
+    background: -webkit-linear-gradient(to right, #DECBA4, #3E5151), $annihilation-url;
+    background: linear-gradient(to right, #DECBA4, #3E5151), $annihilation-url;
+    background-size: cover;
+    
+  }
+}
