@@ -1,15 +1,17 @@
-<section *ngIf="game">
-  <p><b>{{ game.description }}</b><i> by {{ game.ownerDisplayName }}</i></p>
-  <p>{{ game.descriptionDetails }}</p>
-</section>
+<div class="content">
+  <section *ngIf="game">
+    <p><b>{{ game.description }}</b><i> by {{ game.ownerDisplayName }}</i></p>
+    <p>{{ game.descriptionDetails }}</p>
+  </section>
 
-<section *ngIf="characters?.length">
-  <p>Characters: </p>
-  <div *ngFor="let character of characters">
-    <wbhb-character [character]="character"></wbhb-character>
-  </div>
-</section>
+  <section *ngIf="characters?.length">
+    <p>Characters: </p>
+    <div *ngFor="let character of characters">
+      <wbhb-character [character]="character"></wbhb-character>
+    </div>
+  </section>
 
-<section *ngIf="game">
-  <img [src]="game.coverart">
-</section>
+  <section *ngIf="game">
+    <img [src]="game.coverart">
+  </section>
+</div>

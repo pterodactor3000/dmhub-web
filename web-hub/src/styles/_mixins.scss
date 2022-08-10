@@ -1,0 +1,44 @@
+@use "sass:math";
+
+@import "~bootstrap/scss/mixins";
+
+/*
+  breakpoints usage
+  @include layout(desktop, min, landscape) {
+    content: '';
+  }
+  2nd and 3rd value is optional
+*/
+
+$breakpoints: (
+  mobile: 375px,
+  desktop: 1248px,
+  wide: 1440px,
+);
+
+// mobile-first breakpoint mixin
+@mixin layout($breakpoint: mobile, $key: min, $orientation: false) {
+  $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+  @if ($orientation) {
+    @if $key ==min {
+      @media (#{$key}-width: $breakpoint-value) and (orientation: $orientation) {
+        @content;
+      }
+    } @else {
+      @media (#{$key}-width: #{$breakpoint-value - 1}) and (orientation: $orientation) {
+        @content;
+      }
+    }
+  } @else {
+    @if $key ==min {
+      @media (#{$key}-width: $breakpoint-value) {
+        @content;
+      }
+    } @else {
+      @media (#{$key}-width: #{$breakpoint-value - 1}) {
+        @content;
+      }
+    }
+  }
+}

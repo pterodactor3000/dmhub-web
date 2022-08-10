@@ -1,6 +1,21 @@
-@import '_scrollbar';
-@import '_fonts';
+@import "_scrollbar";
+@import "_fonts";
+@import "_grid";
 
-html, body { height: 100%; }
-body { margin: 0; font-family: 'OpenSansRegular'; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: "OpenSansRegular";
 
+  .content {
+    width: -webkit-fill-available;
+    padding: 2rem;
+
+    @include layout(desktop) {
+      margin: 0 15rem;
+    }
+  }
+}
