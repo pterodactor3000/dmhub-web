@@ -1,6 +1,8 @@
-<section class="home-navigation">
-  <a class="home-navigation__game home-navigation__background" [routerLink]="['/game']">Game search</a>
-  <a class="home-navigation__module home-navigation__background" [routerLink]="['/module']">Module search</a>
+<section class="home-navigation grid grid--no-gap">
+  <a class="home-navigation__game home-navigation__background grid--col-start-1--bd grid--cols-6--bd grid--cols-4--bm"
+    [routerLink]="['/game']">Game search</a>
+  <a class="home-navigation__module home-navigation__background grid--col-start-7--bd grid--cols-6--bd grid--cols-4--bm"
+    [routerLink]="['/module']">Module search</a>
 </section>
 
 <wbhb-loader *ngIf="loading"></wbhb-loader>

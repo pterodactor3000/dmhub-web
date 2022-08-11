@@ -1,0 +1,15 @@
+.character {
+  -webkit-box-shadow: 0px 0px 4px 0px rgb(112, 112, 112);
+  -moz-box-shadow: 0px 0px 4px 0px rgb(112, 112, 112);
+  box-shadow: 0px 0px 4px 0px rgb(112, 112, 112);
+  padding: 1rem 2rem;
+
+  p {
+    margin: 1rem 0;
+  }
+
+  &__name {
+    font-family: "Kleymisska";
+    font-size: 3rem;
+  }
+}

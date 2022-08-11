@@ -1,12 +1,16 @@
 <div class="content">
   <section *ngIf="game">
-    <p><b>{{ game.description }}</b><i> by {{ game.ownerDisplayName }}</i></p>
-    <p>{{ game.descriptionDetails }}</p>
+    <div class="game">
+      <p class="game__name">{{ game.description }}</p>
+      <p class="game__owner"><i> by {{ game.ownerDisplayName }}</i></p>
+      <p class="game__description">{{ game.descriptionDetails }}</p>
+    </div>
   </section>
 
-  <section *ngIf="characters?.length">
+  <section *ngIf="characters?.length" class="grid">
     <p>Characters: </p>
-    <div *ngFor="let character of characters">
+    <div *ngFor="let character of characters; let i = index" class="grid--cols-6--bd grid--cols-4--bm"
+      [class.grid--col-start-1--bd]="i % 2 === 0" [class.grid--col-start-7--bd]="i % 2 !== 0">
       <wbhb-character [character]="character"></wbhb-character>
     </div>
   </section>

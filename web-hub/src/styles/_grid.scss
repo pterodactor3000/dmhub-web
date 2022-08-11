@@ -6,9 +6,17 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 12px;
 
+  &--no-gap {
+    gap: 0;
+  }
+
   @include layout(desktop) {
     grid-template-columns: repeat(12, 1fr);
     gap: 20px;
+
+    &--no-gap {
+      gap: 0;
+    }
   }
 
   > * {
