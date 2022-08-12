@@ -12,18 +12,24 @@
   }
 
   &__name {
-    font-family: "Draconis";
     font-size: 4rem;
+    color: var(--header-red);
   }
 
   &__owner {
-    font-family: "Draconis";
     color: rgb(107, 107, 107);
     font-size: 1rem;
   }
 
   &__description {
-    font-family: "Draconis";
     font-size: 1.5rem;
+  }
+
+  &__image {
+    height: 100%;
+    div {
+      background-size: cover;
+      height: 100%;
+    }
   }
 }

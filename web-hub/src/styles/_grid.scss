@@ -25,11 +25,11 @@
 
   @include layout(desktop, max) {
     @for $i from 1 through 4 {
-      &--cols-#{$i}--bm {
+      &__column--#{$i}--bm {
         --column-span: #{$i};
       }
 
-      &--col-start-#{$i}--bm {
+      &__column-start--#{$i}--bm {
         --column-start: #{$i};
       }
     }
@@ -37,11 +37,11 @@
 
   @include layout(desktop) {
     @for $i from 1 through 12 {
-      &--cols-#{$i}--bd {
+      &__column--#{$i}--bd {
         --column-span: #{$i};
       }
 
-      &--col-start-#{$i}--bd {
+      &__column-start--#{$i}--bd {
         --column-start: #{$i};
       }
     }
@@ -49,22 +49,22 @@
 
   // old grid
   @for $i from 1 through 4 {
-    &--cols-#{$i} {
+    &__column--#{$i} {
       --column-span: #{$i};
     }
 
-    &--col-start-#{$i} {
+    &__column-start--#{$i} {
       --column-start: #{$i};
     }
   }
 
   @include layout(desktop) {
     @for $i from 5 through 12 {
-      &--cols-#{$i} {
+      &__column--#{$i} {
         --column-span: #{$i};
       }
 
-      &--col-start-#{$i} {
+      &__column-start--#{$i} {
         --column-start: #{$i};
       }
     }

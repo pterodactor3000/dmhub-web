@@ -1,21 +1,23 @@
 <div class="content">
-  <section *ngIf="game">
-    <div class="game">
+  <section *ngIf="game" class="grid game">
+    <div class="grid__column--6--bd grid__column--4--bm">
       <p class="game__name">{{ game.description }}</p>
       <p class="game__owner"><i> by {{ game.ownerDisplayName }}</i></p>
       <p class="game__description">{{ game.descriptionDetails }}</p>
     </div>
-  </section>
-
-  <section *ngIf="characters?.length" class="grid">
-    <p>Characters: </p>
-    <div *ngFor="let character of characters; let i = index" class="grid--cols-6--bd grid--cols-4--bm"
-      [class.grid--col-start-1--bd]="i % 2 === 0" [class.grid--col-start-7--bd]="i % 2 !== 0">
-      <wbhb-character [character]="character"></wbhb-character>
+    <div class="game__image grid__column--6--bd grid__column--4--bm grid__column-start--7--bd">
+      <div [ngStyle]="{ 'background-image': 'url(' + game.coverart + ')'}"></div>
     </div>
   </section>
 
-  <section *ngIf="game">
-    <img [src]="game.coverart">
+  <section *ngIf="characters?.length" class="grid">
+    <div class="section-heading grid__column--12--bd grid__column--4--bm">
+      <p class="section-heading__title">Characters</p>
+      <div class="section-heading__bottom-border"></div>
+    </div>
+    <div *ngFor="let character of characters; let i = index" class="grid__column--6--bd grid__column--4--bm"
+      [class.grid__column-start--1--bd]="i % 2 === 0" [class.grid__column-start--7--bd]="i % 2 !== 0">
+      <wbhb-character [character]="character"></wbhb-character>
+    </div>
   </section>
 </div>
