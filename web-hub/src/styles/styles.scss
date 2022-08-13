@@ -1,0 +1,39 @@
+@import "_scrollbar";
+@import "_fonts";
+@import "_grid";
+@import "_colors";
+@import "_shadows";
+@import "_backgrounds";
+
+html,
+body {
+  height: 100%;
+}
+body {
+  background-color: rgba(235, 213, 179, 0.25);
+  margin: 0;
+  font-family: "Draconis";
+
+  .content {
+    width: -webkit-fill-available;
+    padding: 2rem;
+
+    @include layout(desktop) {
+      margin: 0 15rem;
+    }
+
+    section {
+      .section-heading {
+        &__title {
+          font-size: 2rem;
+          color: var(--header-red);
+          margin: 5px auto;
+        }
+
+        &__bottom-border {
+          border-bottom: solid var(--border-yellow) 3px;
+        }
+      }
+    }
+  }
+}

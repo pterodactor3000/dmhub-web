@@ -1,0 +1,78 @@
+@import "_mixins";
+
+.grid {
+  --column-start: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+
+  &--no-gap {
+    gap: 0;
+  }
+
+  @include layout(desktop) {
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+
+    &--no-gap {
+      gap: 0;
+    }
+  }
+
+  > * {
+    grid-column: var(--column-start) / span var(--column-span);
+  }
+
+  @include layout(desktop, max) {
+    @for $i from 1 through 4 {
+      &__column--#{$i}--bm {
+        --column-span: #{$i};
+      }
+
+      &__column-start--#{$i}--bm {
+        --column-start: #{$i};
+      }
+    }
+  }
+
+  @include layout(desktop) {
+    @for $i from 1 through 12 {
+      &__column--#{$i}--bd {
+        --column-span: #{$i};
+      }
+
+      &__column-start--#{$i}--bd {
+        --column-start: #{$i};
+      }
+    }
+  }
+
+  // old grid
+  @for $i from 1 through 4 {
+    &__column--#{$i} {
+      --column-span: #{$i};
+    }
+
+    &__column-start--#{$i} {
+      --column-start: #{$i};
+    }
+  }
+
+  @include layout(desktop) {
+    @for $i from 5 through 12 {
+      &__column--#{$i} {
+        --column-span: #{$i};
+      }
+
+      &__column-start--#{$i} {
+        --column-start: #{$i};
+      }
+    }
+  }
+
+  // old grid END
+
+  &--auto-repeat > * {
+    --column-start: span var(--column-span);
+  }
+}
