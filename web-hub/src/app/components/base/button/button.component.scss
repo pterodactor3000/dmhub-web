@@ -1,0 +1,13 @@
+:host {
+  width: -webkit-fill-available;
+
+  button {
+    font-family: "Bontang";
+    cursor: pointer;
+    height: 3rem;
+    width: -webkit-fill-available;
+    background-color: var(--button-primary);
+    border: var(--default-border);
+    box-shadow: var(--card-shadow);
+  }
+}

@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
 import { NgForm } from '@angular/forms';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'wbhb-game',
-  templateUrl: './game.component.html',
-  styleUrls: ['./game.component.scss'],
+  selector: 'wbhb-module',
+  templateUrl: './module.component.html',
+  styleUrls: ['./module.component.scss'],
 })
-export class GameComponent {
-  inputLabel = 'Provide game id...';
+export class ModuleComponent {
+  inputLabel = 'Provide module id...';
   inputValue = '';
 
   constructor(private router: Router, private route: ActivatedRoute) {}

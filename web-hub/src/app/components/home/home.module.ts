@@ -9,6 +9,7 @@ import { GameModule } from './../game/game.module';
 import { ButtonModule } from './../base/button/button.module';
 import { InputModule } from './../base/input/input.module';
 import { BaseModule } from './../base/base.module';
+import { ModuleModule } from './../module/module.module';
 
 @NgModule({
   declarations: [HomeComponent],
@@ -19,6 +20,7 @@ import { BaseModule } from './../base/base.module';
     ButtonModule,
     FormsModule,
     GameModule,
+    ModuleModule,
     LoaderModule,
     RouterModule.forChild([{ path: '', component: HomeComponent }]),
   ],

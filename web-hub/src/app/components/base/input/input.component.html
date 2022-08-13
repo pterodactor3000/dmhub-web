@@ -1,5 +1,4 @@
 <div class="input">
-  <input #inputElement="ngModel" type='text' placeholder="LittleEpicTemperamentalElf" [ngModel]="value" [name]="name"
-    (ngModelChange)="onModelChange($event)">
-  <label [for]="name">{{ label }}</label>
+  <input required #inputElement="ngModel" type='text' name="search" [placeholder]="label" [ngModel]="value"
+    (ngModelChange)="onModelChange($event)" ngModel>
 </div>
