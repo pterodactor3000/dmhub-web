@@ -21,5 +21,16 @@
         outline: none;
       }
     }
+
+    &--error {
+      input {
+        border: var(--error-border);
+        box-shadow: var(--error-shadow);
+      }
+    }
+
+    label {
+      color: red;
+    }
   }
 }

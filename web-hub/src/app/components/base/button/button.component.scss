@@ -9,5 +9,9 @@
     background-color: var(--button-primary);
     border: var(--default-border);
     box-shadow: var(--card-shadow);
+
+    &:disabled {
+      background-color: var(--button-disabled);
+    }
   }
 }

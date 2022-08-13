@@ -1,3 +1,4 @@
+import { SearchModule } from './../base/search/search.module';
 import { DetailsModule } from './details/details.module';
 import { NgModule } from '@angular/core';
 import { GameComponent } from './game.component';
@@ -15,6 +16,7 @@ import { GameRoutingModule } from './game-routing.module';
     InputModule,
     ButtonModule,
     FormsModule,
+    SearchModule,
     GameRoutingModule,
   ],
   exports: [GameComponent],

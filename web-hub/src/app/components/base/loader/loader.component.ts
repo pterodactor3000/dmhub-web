@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Subject } from 'rxjs';
+import { Component } from '@angular/core';
+import { LoaderService } from './loader.service';
 
 @Component({
   selector: 'wbhb-loader',
   templateUrl: './loader.component.html',
-  styleUrls: ['./loader.component.scss']
+  styleUrls: ['./loader.component.scss'],
 })
-export class LoaderComponent implements OnInit {
+export class LoaderComponent {
+  isLoading$: Subject<boolean> = this.loaderService.isLoadingSubject;
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  constructor(private loaderService: LoaderService) {}
 }

@@ -5,6 +5,7 @@ import { ButtonModule } from '../base/button/button.module';
 import { InputModule } from '../base/input/input.module';
 import { ModuleComponent } from './module.component';
 import { ModuleRoutingModule } from './module-routing.module';
+import { SearchModule } from '../base/search/search.module';
 
 @NgModule({
   declarations: [ModuleComponent],
@@ -13,6 +14,7 @@ import { ModuleRoutingModule } from './module-routing.module';
     InputModule,
     ButtonModule,
     FormsModule,
+    SearchModule,
     ModuleRoutingModule,
   ],
   exports: [ModuleComponent],

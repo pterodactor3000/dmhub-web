@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
-import { Router, ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'wbhb-module',
@@ -11,11 +10,5 @@ export class ModuleComponent {
   inputLabel = 'Provide module id...';
   inputValue = '';
 
-  constructor(private router: Router, private route: ActivatedRoute) {}
-
-  onSubmit(form: NgForm): void {
-    if (form.valid) {
-      this.router.navigate([`${this.inputValue}`], { relativeTo: this.route });
-    }
-  }
+  constructor(public route: ActivatedRoute) {}
 }
