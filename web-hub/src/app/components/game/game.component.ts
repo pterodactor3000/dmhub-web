@@ -9,7 +9,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class GameComponent extends BaseComponent {
   inputLabel = 'Provide game id...';
-  inputValue = 'LittleEpicTemperamentalElf';
+  inputValue = '';
 
   constructor(private router: Router, private route: ActivatedRoute) {
     super();

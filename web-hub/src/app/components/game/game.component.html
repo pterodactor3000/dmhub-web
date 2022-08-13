@@ -1,8 +1,11 @@
-<div>
+<div class="content content--full-height">
   <form #gameAccessForm="ngForm" (ngSubmit)="onSubmit()">
-    <wbhb-input [label]="inputLabel" [(ngModel)]="inputValue" name="name"></wbhb-input>
-
-    <wbhb-button [attributes]="{type: 'raised-button', color: 'primary', label: 'Connect'}">
-    </wbhb-button>
+    <div class="search-panel grid">
+      <wbhb-input class="grid__column--8--bd grid__column-start--3--bd grid__column--4--bm" name="name"
+        [label]="inputLabel" [(ngModel)]="inputValue"></wbhb-input>
+      <wbhb-button class="grid__column--12--bd grid__column--4--bm"
+        [attributes]="{type: 'raised-button', color: 'primary', label: 'Connect'}">
+      </wbhb-button>
+    </div>
   </form>
 </div>

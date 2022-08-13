@@ -1,0 +1,56 @@
+:host {
+  width: -webkit-fill-available;
+
+  .input {
+    display: flex;
+    flex-flow: column-reverse;
+    align-items: center;
+
+    label,
+    input {
+      transition: all 0.2s;
+      touch-action: manipulation;
+    }
+
+    input {
+      height: 3rem;
+      width: -webkit-fill-available;
+      text-align: center;
+      font-family: inherit;
+      cursor: text;
+      font-size: 1.5rem;
+
+      &:focus {
+        outline: 0;
+      }
+
+      &:placeholder-shown + label {
+        cursor: text;
+        max-width: 66.66%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        transform: translate(0, 2.125rem) scale(1.5);
+      }
+
+      &:focus::-webkit-input-placeholder {
+        opacity: 1;
+      }
+
+      &:not(:placeholder-shown) + label,
+      &:focus + label {
+        transform: translate(0, 0) scale(1);
+        cursor: pointer;
+      }
+    }
+
+    label {
+      letter-spacing: 0.05em;
+    }
+
+    ::-webkit-input-placeholder {
+      opacity: 0;
+      transition: inherit;
+    }
+  }
+}
