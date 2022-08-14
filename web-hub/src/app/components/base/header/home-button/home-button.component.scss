@@ -1,0 +1,35 @@
+@import "../../../../../styles/mixins";
+
+.home-button {
+  width: 8rem;
+  height: 3rem;
+
+  @include layout(desktop) {
+    height: 4rem;
+  }
+
+  &__half {
+    height: inherit;
+    aspect-ratio: 1/1;
+    border-radius: 4rem;
+  }
+
+  &__left {
+    background: #2c3e50, var(--cauldron-small-url);
+    background: -webkit-linear-gradient(to right, #fd746c, #2c3e50),
+      var(--cauldron-small-url);
+    background: linear-gradient(to right, #fd746c, #2c3e50),
+      var(--cauldron-small-url);
+    background-size: cover;
+    height: inherit;
+  }
+
+  &__right {
+    background: #3e5151, var(--annihilation-small-url);
+    background: -webkit-linear-gradient(to right, #decba4, #3e5151),
+      var(--annihilation-small-url);
+    background: linear-gradient(to right, #decba4, #3e5151),
+      var(--annihilation-small-url);
+    background-size: cover;
+  }
+}

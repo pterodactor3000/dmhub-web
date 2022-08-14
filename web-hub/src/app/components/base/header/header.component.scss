@@ -11,4 +11,8 @@
   @include layout(desktop) {
     height: 4rem;
   }
+
+  &__content {
+    height: -webkit-fill-available;
+  }
 }

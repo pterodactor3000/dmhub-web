@@ -1,4 +1,3 @@
-import { IconTypeKeys } from './icon.k';
 import { Component, Input } from '@angular/core';
 
 @Component({
@@ -6,6 +5,4 @@ import { Component, Input } from '@angular/core';
   templateUrl: './icon.component.html',
   styleUrls: ['./icon.component.scss'],
 })
-export class IconComponent {
-  @Input() icon!: IconTypeKeys;
-}
+export class IconComponent {}
