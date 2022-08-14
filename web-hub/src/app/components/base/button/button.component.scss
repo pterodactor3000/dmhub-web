@@ -9,9 +9,11 @@
     background-color: var(--button-primary);
     border: var(--default-border);
     box-shadow: var(--card-shadow);
+    color: #f0f0f0;
 
     &:disabled {
       background-color: var(--button-disabled);
+      color: #9c9c9c;
     }
   }
 }

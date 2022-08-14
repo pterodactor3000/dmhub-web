@@ -1,0 +1,14 @@
+@import "../../../../styles/mixins";
+
+.header {
+  height: 3rem;
+  width: 100%;
+  box-shadow: var(--header-shadow);
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  @include layout(desktop) {
+    height: 4rem;
+  }
+}

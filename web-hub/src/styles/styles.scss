@@ -16,7 +16,8 @@ body {
 
   .content {
     width: -webkit-fill-available;
-    padding: 2rem;
+    padding: 0 2rem;
+    margin-top: 3rem;
 
     &--full-height {
       height: -webkit-fill-available;
@@ -24,6 +25,8 @@ body {
 
     @include layout(desktop) {
       margin: 0 15rem;
+      margin-top: 4rem;
+      padding: 2rem;
     }
 
     section {
