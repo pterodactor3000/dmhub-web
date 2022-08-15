@@ -1,44 +1,50 @@
+import { ClassKeys } from './keys.d';
 import { FormControl } from '@angular/forms';
-
-/* Keys for indexing purpouses */
-export type QueryParamsKeys = 'gameid' | 'type' | 'id' | 'pretty';
-export type DataObjectKeys = 'object' | 'desc';
-export type CharacterKeys = 'name' | 'owner' | 'summaryDescription' | 'id';
-export type GameResponseKeys =
-  | 'characters'
-  | 'coverart'
-  | 'description'
-  | 'descriptionDetails'
-  | 'ownerDisplayName';
-export type ButtonKeys =
-  | 'button'
-  | 'raised-button'
-  | 'flat-button'
-  | 'stroked-button'
-  | 'icon-button'
-  | 'fab'
-  | 'mini-fab';
-export type InputKeys =
-  | 'color'
-  | 'custom'
-  | 'date'
-  | 'datetime-local'
-  | 'email'
-  | 'month'
-  | 'number'
-  | 'password'
-  | 'search'
-  | 'tel'
-  | 'text'
-  | 'time'
-  | 'url'
-  | 'week';
-export type TypeValueKeys = 'type' | 'value' | 'icon' | 'align' | 'color';
-export type InputAdditionalFieldsKeys = 'prefix' | 'suffix' | 'hint';
-export type ErrorResponseKeys = 'message' | 'type';
+import {
+  QueryParamsKeys,
+  DataObjectKeys,
+  CharacterKeys,
+  NotesKeys,
+  GameResponseKeys,
+  CharacterResponseKeys,
+  ErrorResponseKeys,
+  InputKeys,
+  TypeValueKeys,
+  InputAdditionalFieldsKeys,
+  AppearanceKeys,
+  OffsetKeys,
+  AttributesKeys,
+} from './keys';
 
 /* Key for general get */
-export type ResponsesTypes = DataObjectsResponse | GameResponse | ErrorResponse;
+export type ResponsesTypes =
+  | DataObjectsResponse
+  | GameResponse
+  | ErrorResponse
+  | CharacterResponse;
+
+/* Response types */
+export type DataObjectsResponse = {
+  objects: DataObject[];
+};
+
+export type GameResponse = {
+  [key in GameResponseKeys]: Character[] | string;
+};
+
+export type CharacterResponse = {
+  [key in CharacterResponseKeys]:
+    | string
+    | number
+    | Note[]
+    | Class[]
+    | Appearance
+    | Attributes;
+};
+
+export type ErrorResponse = {
+  [key in ErrorResponseKeys]: string;
+};
 
 /* Types with keys for indexing */
 export type QueryParams = {
@@ -53,22 +59,32 @@ export type Character = {
   [key in CharacterKeys]: string;
 };
 
-/* Response types */
-export type DataObjectsResponse = {
-  objects: DataObject[];
+export type Note = {
+  [key in NotesKeys]: string;
 };
 
-export type GameResponse = {
-  [key in GameResponseKeys]: Character[] | string;
+export type TypeValue = {
+  [key in TypeValueKeys]?: string | InputAdditionalFieldsKeys;
 };
 
-export type ErrorResponse = {
-  [key in ErrorResponseKeys]: string;
+export type Offset = {
+  [key in OffsetKeys]: number;
+};
+
+export type Appearance = {
+  [key in AppearanceKeys]: string | number | Offset;
+};
+
+export type Attributes = {
+  [key in AttributesKeys]: number;
+};
+
+export type Class = {
+  [key in ClassKeys]: string | number;
 };
 
 /* Components attributes */
 export type ButtonAttributes = {
-  type: ButtonKeys;
   color: string;
   label: string;
   disabled?: boolean;
@@ -87,9 +103,4 @@ export type InputAttributes = {
   autoResize?: boolean;
   clearable?: boolean;
   required?: boolean;
-};
-
-/* Additional types */
-export type TypeValue = {
-  [key in TypeValueKeys]?: string | InputAdditionalFieldsKeys;
 };
