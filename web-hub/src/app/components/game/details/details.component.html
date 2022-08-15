@@ -1,5 +1,5 @@
-<div class="content">
-  <section *ngIf="game" class="grid game">
+<div class="content content--full-height">
+  <section *ngIf="!isError && game" class="grid game">
     <div class="grid__column--6--bd grid__column--4--bm">
       <p class="game__name">{{ game.description }}</p>
       <p class="game__owner"><i> by {{ game.ownerDisplayName }}</i></p>
@@ -10,7 +10,7 @@
     </div>
   </section>
 
-  <section *ngIf="characters?.length" class="grid">
+  <section *ngIf="!isError && characters?.length" class="grid">
     <div class="section-heading grid__column--12--bd grid__column--4--bm">
       <p class="section-heading__title">Characters</p>
       <div class="section-heading__bottom-border"></div>
@@ -19,5 +19,12 @@
       [class.grid__column-start--1--bd]="i % 2 === 0" [class.grid__column-start--7--bd]="i % 2 !== 0">
       <wbhb-character [character]="character"></wbhb-character>
     </div>
+  </section>
+
+  <section *ngIf="isError" class="error grid">
+    <p class="error__message grid__column--12--bd grid__column--4--bm">{{ errorMessage }}</p>
+    <wbhb-button class="grid__column--2--bd grid__column--2--bm grid__column-start--6--bd grid__column-start--2--bm"
+      [attributes]="{type: 'raised-button', color: 'primary', label: 'Search again'}" (click)="click()">
+    </wbhb-button>
   </section>
 </div>

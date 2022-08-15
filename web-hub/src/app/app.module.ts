@@ -1,3 +1,5 @@
+import { LoaderModule } from './components/base/loader/loader.module';
+import { LoaderInterceptor } from './interceptors/loader.interceptor';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -8,8 +10,9 @@ import { environment } from '../environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ComponentsModule } from './components/components.module';
 import { HttpService } from './services/http.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { WbHbModule } from './wb-hb.module';
+import { HeaderModule } from './components/base/header/header.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,6 +22,8 @@ import { WbHbModule } from './wb-hb.module';
     AppRoutingModule,
     ComponentsModule,
     HttpClientModule,
+    LoaderModule,
+    HeaderModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the application is stable
@@ -27,7 +32,10 @@ import { WbHbModule } from './wb-hb.module';
     }),
     BrowserAnimationsModule,
   ],
-  providers: [HttpService],
+  providers: [
+    HttpService,
+    { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

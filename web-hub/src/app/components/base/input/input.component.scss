@@ -1,0 +1,36 @@
+:host {
+  width: -webkit-fill-available;
+
+  .input {
+    display: flex;
+    flex-flow: column-reverse;
+    align-items: center;
+
+    input {
+      border: var(--default-border);
+      box-shadow: var(--card-shadow);
+      height: 4rem;
+      width: -webkit-fill-available;
+      text-align: center;
+      font-family: inherit;
+      cursor: text;
+      font-size: 1.5rem;
+
+      &:focus,
+      &:valid {
+        outline: none;
+      }
+    }
+
+    &--error {
+      input {
+        border: var(--error-border);
+        box-shadow: var(--error-shadow);
+      }
+    }
+
+    label {
+      color: red;
+    }
+  }
+}
