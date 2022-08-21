@@ -1,4 +1,4 @@
 <div class="input">
-  <input ngModel required #inputElement="ngModel" type='text' name="search" [placeholder]="label" [ngModel]="value"
+  <input ngModel required #inputElement="ngModel" [name]="name" [type]="type" [placeholder]="label" [ngModel]="value"
     (ngModelChange)="onModelChange($event)">
 </div>
