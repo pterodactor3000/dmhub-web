@@ -2,7 +2,7 @@ import { AuthService } from './../../services/auth.service';
 
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'wbhb-login',
@@ -19,7 +19,7 @@ export class LoginComponent {
     if (form.valid) {
       this.authService
         .login(this.email, this.password)
-        .then(() => this.router.navigate(['']))
+        .then(() => this.router.navigateByUrl('/home'))
         .catch((error) => {
           var errorCode = error.code;
           var errorMessage = error.message;

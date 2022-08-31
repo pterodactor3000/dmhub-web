@@ -12,12 +12,11 @@ import { GameRoutingModule } from './game-routing.module';
   declarations: [GameComponent],
   imports: [
     WbHbModule,
-    DetailsModule,
+    GameRoutingModule,
     InputModule,
     ButtonModule,
     FormsModule,
     SearchModule,
-    GameRoutingModule,
   ],
   exports: [GameComponent],
 })

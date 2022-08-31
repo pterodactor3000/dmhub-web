@@ -3,9 +3,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: 'game/:gameid', component: DetailsComponent },
   {
-    path: 'game/:gameid/character',
+    path: '',
+    component: DetailsComponent,
+  },
+  {
+    path: 'character',
     loadChildren: () =>
       import('../character/sheet/sheet.module').then((m) => m.SheetModule),
   },

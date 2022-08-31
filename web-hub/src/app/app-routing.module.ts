@@ -1,41 +1,40 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {
-  AngularFireAuthGuard,
+  canActivate,
   redirectLoggedInTo,
   redirectUnauthorizedTo,
 } from '@angular/fire/compat/auth-guard';
 
-const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
-const redirectAuthorizedToHome = () => redirectLoggedInTo(['']);
+const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo('login');
+const redirectAuthorizedToHome = () => redirectLoggedInTo('home');
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'home',
     loadChildren: () =>
       import('./components/home/home.module').then((m) => m.HomeModule),
-    canActivate: [AngularFireAuthGuard],
-    data: { authGuardPipe: redirectUnauthorizedToLogin },
+    ...canActivate(redirectUnauthorizedToLogin),
   },
   {
     path: 'login',
     loadChildren: () =>
       import('./components/login/login.module').then((m) => m.LoginModule),
-    canActivate: [AngularFireAuthGuard],
-    data: { authGuardPipe: redirectAuthorizedToHome },
+    ...canActivate(redirectAuthorizedToHome),
   },
   {
     path: 'game',
     loadChildren: () =>
       import('./components/game/game.module').then((m) => m.GameModule),
+    ...canActivate(redirectUnauthorizedToLogin),
   },
   {
-    path: 'game/:gameid',
+    path: 'module',
     loadChildren: () =>
-      import('./components/game/details/details.module').then(
-        (m) => m.DetailsModule
-      ),
+      import('./components/module/module.module').then((m) => m.ModuleModule),
+    ...canActivate(redirectUnauthorizedToLogin),
   },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   {
     path: '**',
     loadChildren: () =>
@@ -46,7 +45,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { enableTracing: true })],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

@@ -31,6 +31,7 @@ export class DetailsComponent extends BaseComponent implements OnInit {
   errorMessage!: string;
   isError!: boolean;
   characters!: Character[];
+
   constructor(
     private router: Router,
     private route: ActivatedRoute,

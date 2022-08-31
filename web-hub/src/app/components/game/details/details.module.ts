@@ -12,12 +12,11 @@ import { DetailsRoutingModule } from './details-routing.module';
   declarations: [DetailsComponent],
   imports: [
     CommonModule,
+    DetailsRoutingModule,
     CharacterModule,
-    SheetModule,
     InputModule,
     ButtonModule,
     FormsModule,
-    DetailsRoutingModule,
   ],
   exports: [DetailsComponent],
 })
