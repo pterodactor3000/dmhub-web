@@ -53,3 +53,31 @@ export type AppearanceKeys =
 export type OffsetKeys = 'x' | 'y';
 export type AttributesKeys = 'cha' | 'con' | 'dex' | 'int' | 'str' | 'wis';
 export type ClassKeys = 'classid' | 'level';
+export type CurrencyKeys = 'history' | 'value';
+export type HistoryKeys = 'entries';
+export type EntryKeys = 'set' | 'timestamp' | 'userid';
+export type EquipmentKeys = 'armor' | 'mainhand' | 'offhand';
+export type InventoryKeys = 'quantity' | 'slots';
+export type SlotKeys = 'slot';
+export type PreparedSpellsKeys = 'timestamp';
+export type InnatePropertiesKeys =
+  | 'attacks'
+  | 'savingThrows'
+  | 'skillProficiencies';
+
+export type CharacterDetailsKeys =
+  | 'raceid'
+  | 'backgroundid'
+  | 'damage_taken'
+  | 'characterName'
+  | 'createdTimestamp'
+  | 'appearance'
+  | 'baseAttributes'
+  | 'classes'
+  | 'currency'
+  | 'equipment'
+  | 'inventory'
+  | 'levelChoices'
+  | 'innateProperties'
+  | 'notes'
+  | 'preparedSpells';

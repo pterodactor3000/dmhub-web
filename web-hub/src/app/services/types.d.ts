@@ -104,3 +104,6 @@ export type InputAttributes = {
   clearable?: boolean;
   required?: boolean;
 };
+
+/* Additional types */
+export type Guid = string;
