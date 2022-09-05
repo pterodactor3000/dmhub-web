@@ -1,15 +1,11 @@
+import { AttributeModule } from './attribute/attribute.module';
+import { WbHbModule } from 'src/app/wb-hb.module';
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { AttributesComponent } from './attributes.component';
 
-
-
 @NgModule({
-  declarations: [
-    AttributesComponent
-  ],
-  imports: [
-    CommonModule
-  ]
+  declarations: [AttributesComponent],
+  exports: [AttributesComponent],
+  imports: [WbHbModule, AttributeModule],
 })
-export class AttributesModule { }
+export class AttributesModule {}

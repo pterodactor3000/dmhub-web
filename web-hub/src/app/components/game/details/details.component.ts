@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { HttpService } from 'src/app/services/http.service';
 import { GameResponse, Character } from 'src/app/services/types';
+import { LocalService } from '@data/local.service';
 
 @Component({
   selector: 'wbhb-details',
@@ -35,7 +36,8 @@ export class DetailsComponent extends BaseComponent implements OnInit {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private service: HttpService
+    private service: HttpService,
+    private localService: LocalService
   ) {
     super();
   }
@@ -43,17 +45,20 @@ export class DetailsComponent extends BaseComponent implements OnInit {
   ngOnInit(): void {
     this.route.params
       .pipe(
-        switchMap((params: Params) =>
-          this.service.get({
+        switchMap((params: Params) => {
+          this.localService.saveData('gameid', params['gameid']);
+          return this.service.get({
             gameid: params['gameid'],
             pretty: true,
             type: '',
             id: '',
-          })
-        )
+          });
+        })
       )
       .pipe(takeUntil(this.unsubscribeSubject))
-      .subscribe((game) => (this.game = game));
+      .subscribe((game) => {
+        this.game = game;
+      });
   }
 
   click() {

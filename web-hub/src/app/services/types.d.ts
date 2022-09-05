@@ -1,4 +1,9 @@
-import { ClassKeys } from './keys.d';
+import {
+  CharacterSheetFieldDataKeys,
+  CharacterSheetFieldKeys,
+  ClassKeys,
+  TokenKeys,
+} from './keys.d';
 import { FormControl } from '@angular/forms';
 import {
   QueryParamsKeys,
@@ -18,6 +23,7 @@ import {
 
 /* Key for general get */
 export type ResponsesTypes =
+  | ImageResponse
   | DataObjectsResponse
   | GameResponse
   | ErrorResponse
@@ -44,6 +50,10 @@ export type CharacterResponse = {
 
 export type ErrorResponse = {
   [key in ErrorResponseKeys]: string;
+};
+
+export type ImageResponse = {
+  url: string;
 };
 
 /* Types with keys for indexing */
@@ -81,6 +91,14 @@ export type Attributes = {
 
 export type Class = {
   [key in ClassKeys]: string | number;
+};
+
+export type SheetData = {
+  [key in CharacterSheetFieldDataKeys]?: TokenData;
+};
+
+export type TokenData = {
+  [key in TokenKeys]: Appearance | Class[] | string;
 };
 
 /* Components attributes */

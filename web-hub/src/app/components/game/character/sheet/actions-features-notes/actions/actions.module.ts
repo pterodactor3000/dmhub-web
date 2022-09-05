@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [ActionsComponent],
+  exports: [ActionsComponent],
   imports: [CommonModule],
 })
 export class ActionsModule {}

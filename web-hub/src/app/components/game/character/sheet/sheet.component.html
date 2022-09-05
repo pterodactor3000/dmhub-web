@@ -1,42 +1,50 @@
-{{ character | json }}
+<!-- {{ character | json }} -->
 <div class="content content--full-height">
   <div class="grid sheet">
     <div class="grid__column--3--bd grid__column--4--bm sheet--left">
-      <div class="sheet__token">token</div>
-      <div class="sheet__conditions">conditions</div>
-      <div class="sheet__defenses">defenses</div>
-      <div class="sheet__proficiencies">poficiencies and languages</div>
-    </div>
 
+      <wbhb-token *ngIf="sheetData.tokenData" class="sheet__token" [tokenData]="sheetData.tokenData"></wbhb-token>
+      <wbhb-list class="sheet__conditions"></wbhb-list>
+      <wbhb-list class="sheet__defenses"></wbhb-list>
+      <wbhb-list class="sheet__proficiencies"></wbhb-list>
+
+    </div>
     <div class="grid__column--9--bd grid__column--4--bm grid__column-start--4--bd sheet--right">
       <div class="grid">
-        <div class="grid__column--12--bd grid__column--4--bm sheet__attributes">attributes</div>
+
+        <wbhb-attributes class="grid__column--12--bd grid__column--4--bm sheet__attributes"></wbhb-attributes>
 
         <div class="grid__column--12--bd grid__column--4--bm sheet--middle">
           <div class="grid">
             <div class="grid__column--3--bd grid__column--4--bm sheet--middle--left">
-              <div class="sheet__saving-throws">saves</div>
-              <div class="sheet__passives">passives</div>
-              <div class="sheet__resources">resources</div>
-            </div>
 
+              <wbhb-skills class="sheet__saving-throws"></wbhb-skills>
+              <wbhb-list class="sheet__passives"></wbhb-list>
+              <wbhb-resources class="sheet__resources"></wbhb-resources>
+
+            </div>
             <div class="grid__column--3--bd grid__column-start--4--bd grid__column--4--bm sheet--middle--center">
-              <div class="sheet__skills">skills</div>
-            </div>
 
+              <wbhb-skills class="sheet__skills"></wbhb-skills>
+
+            </div>
             <div class="grid__column--6--bd grid__column-start--7--bd grid__column--4--bm sheet--middle--right">
               <div class="grid">
                 <div class="grid__column--12--bd grid__column--4--bm sheet--middle--right--top">
                   <div class="grid">
-                    <div class="grid__column--6--bd grid__column--2--bm sheet__ac-speed">ac & speed</div>
-                    <div
+
+                    <wbhb-armor-class-speed class="grid__column--6--bd grid__column--2--bm sheet__ac-speed">
+                    </wbhb-armor-class-speed>
+                    <wbhb-hitpoints
                       class="grid__column--6--bd grid__column-start--7--bd grid__column-start--3--bm grid__column--2--bm sheet__hp">
-                      hp</div>
+                    </wbhb-hitpoints>
+
                   </div>
                 </div>
-
                 <div class="grid__column--12--bd grid__column--4--bm sheet--middle--right--bottom">
-                  <div class="sheet__actions-feats-notes">actions / feats / notes</div>
+
+                  <wbhb-actions-features-notes class="sheet__actions-feats-notes"></wbhb-actions-features-notes>
+
                 </div>
               </div>
             </div>

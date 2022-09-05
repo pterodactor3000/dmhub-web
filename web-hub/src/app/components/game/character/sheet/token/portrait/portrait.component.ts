@@ -1,15 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'wbhb-portrait',
   templateUrl: './portrait.component.html',
-  styleUrls: ['./portrait.component.scss']
+  styleUrls: ['./portrait.component.scss'],
 })
 export class PortraitComponent implements OnInit {
+  @Input() data!: any;
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

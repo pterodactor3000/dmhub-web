@@ -64,6 +64,19 @@ export type InnatePropertiesKeys =
   | 'attacks'
   | 'savingThrows'
   | 'skillProficiencies';
+export type CharacterSheetFieldKeys =
+  | 'token'
+  | 'attributes'
+  | 'skills'
+  | 'resources'
+  | 'hitpoints'
+  | 'armorClassSpeed'
+  | 'actionsFeaturesNotes'
+  | 'savingThrows'
+  | 'proficiencies'
+  | 'defenses';
+export type CharacterSheetFieldDataKeys = `${CharacterSheetFieldKeys}Data`;
+export type TokenKeys = 'appearance' | 'characterName' | 'classes' | 'raceid';
 
 export type CharacterDetailsKeys =
   | 'raceid'

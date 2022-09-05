@@ -20,7 +20,8 @@
     "lib": ["es2020", "dom"],
     "paths": {
       "@env": ["src/environments/environment"],
-      "@base": ["src/app/components/base"]
+      "@base/*": ["src/app/components/base/*"],
+      "@data/*": ["src/app/services/*"]
     }
   },
   "angularCompilerOptions": {

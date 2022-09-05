@@ -1,3 +1,4 @@
+import { LocalService } from './services/local.service';
 import { NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
@@ -42,6 +43,7 @@ import { LoaderInterceptor } from './interceptors/loader.interceptor';
   ],
   providers: [
     HttpService,
+    LocalService,
     AngularFireAuthGuard,
     { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true },
     { provide: PERSISTENCE, useValue: 'session' },

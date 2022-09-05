@@ -1,15 +1,11 @@
+import { PortraitModule } from './portrait/portrait.module';
+import { WbHbModule } from 'src/app/wb-hb.module';
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { TokenComponent } from './token.component';
 
-
-
 @NgModule({
-  declarations: [
-    TokenComponent
-  ],
-  imports: [
-    CommonModule
-  ]
+  declarations: [TokenComponent],
+  imports: [WbHbModule, PortraitModule],
+  exports: [TokenComponent],
 })
-export class TokenModule { }
+export class TokenModule {}

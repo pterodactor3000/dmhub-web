@@ -1,15 +1,10 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { WbHbModule } from 'src/app/wb-hb.module';
 import { ResourceComponent } from './resource.component';
 
-
-
 @NgModule({
-  declarations: [
-    ResourceComponent
-  ],
-  imports: [
-    CommonModule
-  ]
+  declarations: [ResourceComponent],
+  exports: [ResourceComponent],
+  imports: [WbHbModule],
 })
-export class ResourceModule { }
+export class ResourceModule {}
