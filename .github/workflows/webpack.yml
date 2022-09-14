@@ -27,6 +27,6 @@ jobs:
 
     - name: Build
       run: |
-        dir
+        npm install @angular/cli@v14.1.0
         npm install
-        npm run serve
+        npm run start
