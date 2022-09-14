@@ -27,5 +27,6 @@ jobs:
 
     - name: Build
       run: |
+        dir
         npm install
         npm run serve
