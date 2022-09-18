@@ -1,9 +1,4 @@
-import {
-  CharacterSheetFieldDataKeys,
-  CharacterSheetFieldKeys,
-  ClassKeys,
-  TokenKeys,
-} from './keys.d';
+import { CharacterSheetFieldDataKeys, ClassKeys, TokenKeys } from './keys.d';
 import { FormControl } from '@angular/forms';
 import {
   QueryParamsKeys,
@@ -19,6 +14,7 @@ import {
   AppearanceKeys,
   OffsetKeys,
   AttributesKeys,
+  PortraitKeys,
 } from './keys';
 
 /* Key for general get */
@@ -99,6 +95,10 @@ export type SheetData = {
 
 export type TokenData = {
   [key in TokenKeys]: Appearance | Class[] | string;
+};
+
+export type Portrait = {
+  [key in AppearanceKeys | PortraitKeys]: string | number | Offset;
 };
 
 /* Components attributes */

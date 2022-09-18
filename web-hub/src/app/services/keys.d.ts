@@ -50,6 +50,7 @@ export type AppearanceKeys =
   | 'tokenZoom'
   | 'portraitid'
   | 'portraitframeid';
+export type PortraitKeys = 'imageUrl' | 'frameUrl';
 export type OffsetKeys = 'x' | 'y';
 export type AttributesKeys = 'cha' | 'con' | 'dex' | 'int' | 'str' | 'wis';
 export type ClassKeys = 'classid' | 'level';
