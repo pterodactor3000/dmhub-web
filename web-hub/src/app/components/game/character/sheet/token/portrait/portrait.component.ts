@@ -8,11 +8,12 @@ import { Portrait } from '@data/types';
 })
 export class PortraitComponent implements OnInit {
   @Input() data!: Portrait;
+
   borderImage!: string;
-  constructor() {}
 
   ngOnInit(): void {
-    console.log(this.data);
-    this.borderImage = `border-image: url(${this.data.frameUrl}) 74 / 150px / 0`;
+    this.borderImage = `border-image: url(${
+      this.data.frameUrl || ''
+    }) 74 / 150px / 0`;
   }
 }
