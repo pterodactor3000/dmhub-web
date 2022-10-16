@@ -67,7 +67,7 @@ jobs:
           node-version: 16.x
 
       - name: Move files to App Engine
-        run: gsutil rsync -r gs://dmhub-webhub ./webhub-gcp
+        run: gsutil rsync -d -r gs://dmhub-webhub ./webhub-gcp
 
       - name: Deploy
         run: cd webhub-gcp/ & gcloud app deploy
