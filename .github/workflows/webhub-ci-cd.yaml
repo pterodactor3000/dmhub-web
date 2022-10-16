@@ -5,7 +5,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: 'read'
+      id-token: 'write'
+      
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -26,19 +29,14 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+        
       - name: Build
         run: npm run build
+        
       - name: Verify contents
         run: dir & ls -la
-
-  upload:
-    permissions:
-      contents: 'read'
-      id-token: 'write'
-    runs-on: ubuntu-latest
-    needs: [build]
-
-    steps:
+        
+# this was another job
       - name: Use Node.js 16
         uses: actions/setup-node@v1
         with:
@@ -51,9 +49,6 @@ jobs:
           service_account_key: ${{ secrets.GCP_SA_KEY }}
           export_default_credentials: true
 
-      - name: Verify contents
-        run: dir & ls -la
-        
       - name: Upload files
         uses: 'google-github-actions/upload-cloud-storage@v0'
         with:
@@ -63,7 +58,7 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
-    needs: [upload]
+    needs: [build]
 
     steps:
       - name: Use Node.js 16
