@@ -1,0 +1,16 @@
+.portrait {
+  height: 150px;
+  display: flex;
+  justify-content: center;
+
+  &__image {
+    max-width: 150px;
+    max-height: 150px;
+    position: absolute;
+    border-radius: 75px;
+    border: 22px solid transparent;
+    border-image-width: 150px;
+    border-image-outset: 0px;
+    border-image-slice: 74;
+  }
+}

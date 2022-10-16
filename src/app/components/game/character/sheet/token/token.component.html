@@ -1,0 +1,5 @@
+<wbhb-portrait *ngIf="portraitData" [data]="portraitData"></wbhb-portrait>
+<div *ngIf="raceData && tokenData && classesData">
+  <p>{{ tokenData.characterName }}, {{ raceData.name }}</p>
+  <p *ngFor="let class of classes; index as i">Level {{ class.level }} {{ classesData[i].name }}</p>
+</div>
