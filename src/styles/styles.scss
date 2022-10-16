@@ -1,0 +1,67 @@
+/* Importing Bootstrap SCSS file. */
+@import "~bootstrap/scss/bootstrap";
+
+@import "_scrollbar";
+@import "_fonts";
+@import "_grid";
+@import "_colors";
+@import "_shadows";
+@import "_backgrounds";
+
+html,
+body {
+  height: 100%;
+}
+body {
+  background-color: var(--body-background);
+  margin: 0;
+  font-family: "Draconis";
+
+  .content {
+    width: -webkit-fill-available;
+    padding: 0 2rem;
+    margin-top: 3rem;
+
+    &--full-height {
+      height: -webkit-fill-available;
+    }
+
+    @include layout(desktop) {
+      margin: 0 15rem;
+      margin-top: 4rem;
+      padding: 2rem;
+    }
+
+    section {
+      .section-heading {
+        &__title {
+          font-size: 2rem;
+          color: var(--header-red);
+          margin: 5px auto;
+        }
+
+        &__bottom-border {
+          border-bottom: solid var(--border-yellow) 3px;
+        }
+      }
+
+      &.error {
+        justify-items: center;
+        height: inherit;
+        align-content: center;
+
+        .error__message {
+          font-size: 3rem;
+          color: var(--header-red);
+          margin: 1rem 0;
+          text-align: center;
+        }
+
+        .error__link {
+          font-size: 2rem;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

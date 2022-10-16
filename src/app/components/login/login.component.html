@@ -1,0 +1,15 @@
+<div class="content content--full-height">
+  <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+
+    <div class="login-panel grid">
+      <wbhb-input required class="grid__column--8--bd grid__column-start--3--bd grid__column--4--bm" label="Email"
+        type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" [(ngModel)]="email"></wbhb-input>
+      <wbhb-input required class="grid__column--8--bd grid__column-start--3--bd grid__column--4--bm" label="Password"
+        type="password" name="password" [(ngModel)]="password"></wbhb-input>
+      <wbhb-button class="grid__column--2--bd grid__column--2--bm grid__column-start--6--bd grid__column-start--2--bm"
+        [attributes]="{color: 'primary', label: 'Log In', disabled: !form.valid}">
+      </wbhb-button>
+    </div>
+
+  </form>
+</div>
