@@ -19,7 +19,7 @@ jobs:
         run: npm ci
 
       - name: Build
-        run: npm run build
+        run: ng build
 
       - name: Verify contents
         run: ls -la

@@ -31,7 +31,7 @@ jobs:
         run: npm ci
 
       - name: Build
-        run: npm run build --configuration development
+        run: ng build --configuration development
 
       - name: Verify contents
         run: ls -la
