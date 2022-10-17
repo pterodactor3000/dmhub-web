@@ -36,8 +36,6 @@ If you would like to contribute to the project, please stick to the notes below.
 
 ## Styles
 
-Styles are created using [SCSS](https://sass-lang.com/documentation/) with [BEM methodology](https://getbem.com/).
-
 Global styles are placed in the `src/styles` folder.
 
 For values used in most places, please use variables declared in the files from styles folder. 
@@ -129,4 +127,122 @@ The components should be as small as possible, meaning each component should hav
 
 ## Conventions
 
-```TODO```
+### Commits
+
+Commits should be named in accordance to guide for [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
+
+### Issues / Tasks
+
+Issues, or tasks, should be created via [Projects page](https://github.com/users/pterodactor3000/projects/1). Name of the task should contain some kind of overall portion (or section) of the app developed there and a specific part of said portion.
+
+```
+<section> - <feature>
+```
+
+Ex.
+```
+Character sheet - attributes
+```
+
+In the task description you can specify details for this feature. Required fields to be filled in the issue are
+
+* Labels - provide label for the task, either if it's general question, bug, enhancement, or etc.
+* Projects - assign the project for this repo if its not assigned automatically.
+* Milestone - assign milestone for the issue, if t does not exist - create one.
+
+*Optional* You can assign specific contributor to do the task, if you know that said person will definately do it.
+
+### Branches
+
+Branches should follow convention based on gitflow and should be branched from `main` branch.
+
+```
+feature/<issue number>-<short description>
+bugfix/<issue number>-<short description>
+hotfix/<issue number>-<short description>
+```
+
+### Pull requests
+
+Pull requests should have in the title issue number and short description on what it contains. The description can have more informations about changes and (optional) screenshots. 
+
+*Note*: I'm aware that PRs so far do not use this convention, but from now on (17.10.2022) they will :smile:
+
+Please review PRs thoroughly! Check if the features are being built locally, if they work properly and look as agreed upon. If that is ok, check the code for possible improvements and optimisation. For PR comments we use [Conventional Comments](https://conventionalcomments.org/).
+
+### Components names
+
+The components should be named with rather short names, but long enough to state what the component is responsible for. With naming also take into consideration relative placement of the component.
+
+***No!***
+
+```
+GameCharacteSheetResourcesListComponent
+```
+
+***Yes!***
+
+```
+ResourcesComponent
+```
+
+*Placed in `components/game/character/sheet/resources`*
+
+### Services names
+
+Services also should be named like components: short and to the point, but enough that you can discern what it's responsible for.
+
+### Code
+
+This project uses [Prettier formatter](https://prettier.io/).
+
+Code should follow [TypeScript style guide](https://google.github.io/styleguide/tsguide.html).
+
+Styles are created using [SCSS](https://sass-lang.com/documentation/) with [BEM methodology](https://getbem.com/).
+
+### Types
+
+This project uses [TypeScript](https://www.typescriptlang.org/docs/).
+
+The variables and functions ***all*** should have types specified (excluding constructor).
+
+Types definitions have two steps:
+
+1. Define possible keys for the type
+2. Utilise defined keys for type declaration
+
+**Ad. 1.** Keys are specific type of types (I know, I know...) defined using union types with suffix `Keys`, and stored in `keys.d.ts` file.
+
+Ex.
+
+```
+export type AttributesKeys = 'cha' | 'con' | 'dex' | 'int' | 'str' | 'wis';
+```
+
+**Ad. 2.** Types are defined in `types.d.ts` using keys from `keys.d.ts` by utilising them as possible properties of types.
+
+Ex.
+
+```
+export type Attributes = {
+  [key in AttributesKeys]: number;
+};
+```
+
+This allows us to index through the object values and access properties dynamically:
+
+Ex.
+
+```
+private buildParams(query: QueryParams): HttpParams {
+    let params = new HttpParams();
+
+    for (const key in query) {
+      if (query[key as QueryParamsKeys]) {
+        params = params.append(key, query[key as QueryParamsKeys]);
+      }
+    }
+
+    return params;
+  }
+```
