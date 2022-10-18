@@ -2,8 +2,10 @@ runtime: nodejs16
 
 instance_class: F2
 
+service: production
+
 env_variables:
-  BUCKET_NAME: "dmhub-webhub"
+  BUCKET_NAME: 'dmhub-webhub'
 
 handlers:
   - url: /
