@@ -9,8 +9,8 @@ env_variables:
 
 handlers:
   - url: /
-    static_files: dist/web-hub/index.html
-    upload: dist/web-hub/index.html
+    static_files: rc/dist/web-hub/index.html
+    upload: rc/dist/web-hub/index.html
 
   - url: /
-    static_dir: dist/web-hub
+    static_dir: rc/dist/web-hub
