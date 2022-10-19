@@ -5,12 +5,12 @@ instance_class: F2
 service: release-candidate
 
 env_variables:
-  BUCKET_NAME: 'dmhub-webhub'
+  BUCKET_NAME: 'dmhub-webhub-rc'
 
 handlers:
   - url: /
-    static_files: rc/dist/web-hub/index.html
-    upload: rc/dist/web-hub/index.html
+    static_files: dist/web-hub/index.html
+    upload: dist/web-hub/index.html
 
   - url: /
-    static_dir: rc/dist/web-hub
+    static_dir: dist/web-hub
