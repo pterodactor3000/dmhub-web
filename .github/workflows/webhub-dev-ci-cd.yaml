@@ -62,4 +62,4 @@ jobs:
       - name: Deploy
         run:
           gcloud app deploy --appyaml=deploy/app-dev.yaml
-          --bucket=gs://dmhub-webhub/dev
+          --bucket=gs://dmhub-webhub
