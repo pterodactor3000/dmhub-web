@@ -59,8 +59,5 @@ jobs:
       - name: 'Use gcloud CLI'
         run: 'gcloud info'
 
-      - name: 'Huh'
-        run: ls -al
-
       - name: Deploy
-        run: gcloud app deploy dist --appyaml deploy/app-dev.yaml
+        run: gcloud app deploy --appyaml deploy/app-dev.yaml
