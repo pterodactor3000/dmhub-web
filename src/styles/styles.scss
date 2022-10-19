@@ -1,12 +1,13 @@
 /* Importing Bootstrap SCSS file. */
-@import "~bootstrap/scss/bootstrap";
+@import '~bootstrap/scss/bootstrap';
 
-@import "_scrollbar";
-@import "_fonts";
-@import "_grid";
-@import "_colors";
-@import "_shadows";
-@import "_backgrounds";
+@import '_functions';
+@import '_scrollbar';
+@import '_fonts';
+@import '_grid';
+@import '_colors';
+@import '_shadows';
+@import '_backgrounds';
 
 html,
 body {
@@ -15,7 +16,7 @@ body {
 body {
   background-color: var(--body-background);
   margin: 0;
-  font-family: "Draconis";
+  font-family: 'Draconis';
 
   .content {
     width: -webkit-fill-available;

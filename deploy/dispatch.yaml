@@ -1,6 +1,0 @@
-dispatch:
-  - url: 'dev-dot-*'
-    service: dev
-
-  - url: 'rc-dot-*'
-    service: rc

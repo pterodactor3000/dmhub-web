@@ -5,5 +5,9 @@ form {
     height: -webkit-fill-available;
     justify-items: center;
     align-content: center;
+
+    &__label {
+      font-size: var(--font-size-large);
+    }
   }
 }
