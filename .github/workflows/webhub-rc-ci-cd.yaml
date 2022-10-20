@@ -1,6 +1,6 @@
 on:
   push:
-    branches: ['releases/**']
+    branches: ['release/**']
 
 jobs:
   build-and-deploy:
