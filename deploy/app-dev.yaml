@@ -1,0 +1,16 @@
+runtime: nodejs16
+
+instance_class: F2
+
+service: development
+
+env_variables:
+  BUCKET_NAME: 'dmhub-webhub-dev'
+
+handlers:
+  - url: /
+    static_files: dist/web-hub/index.html
+    upload: dist/web-hub/index.html
+
+  - url: /
+    static_dir: dist/web-hub

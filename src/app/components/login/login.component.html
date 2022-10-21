@@ -2,6 +2,9 @@
   <form #form="ngForm" (ngSubmit)="onSubmit(form)">
 
     <div class="login-panel grid">
+      <div class="login-panel__label grid__column--8--bd grid__column-start--3--bd grid__column--4--bm">Log in with your
+        DMHUB credentials
+      </div>
       <wbhb-input required class="grid__column--8--bd grid__column-start--3--bd grid__column--4--bm" label="Email"
         type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" [(ngModel)]="email"></wbhb-input>
       <wbhb-input required class="grid__column--8--bd grid__column-start--3--bd grid__column--4--bm" label="Password"

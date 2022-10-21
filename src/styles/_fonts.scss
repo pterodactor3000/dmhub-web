@@ -1,32 +1,43 @@
+@import '_mixins';
+
 @font-face {
-  font-family: "Kleymisska";
-  src: url("../assets/fonts/Kleymisska.ttf");
+  font-family: 'Kleymisska';
+  src: url('../assets/fonts/Kleymisska.ttf');
 }
 @font-face {
-  font-family: "Bontang";
-  src: url("../assets/fonts/Bontang.otf");
+  font-family: 'Bontang';
+  src: url('../assets/fonts/Bontang.otf');
 }
 @font-face {
-  font-family: "Hundergaddemo";
-  src: url("../assets/fonts/Hundergaddemo.ttf");
+  font-family: 'Hundergaddemo';
+  src: url('../assets/fonts/Hundergaddemo.ttf');
 }
 @font-face {
-  font-family: "NewspaperRegular";
-  src: url("../assets/fonts/NewspaperRegular.ttf");
+  font-family: 'NewspaperRegular';
+  src: url('../assets/fonts/NewspaperRegular.ttf');
 }
 @font-face {
-  font-family: "OneVerseRegular";
-  src: url("../assets/fonts/OneVerseRegular.ttf");
+  font-family: 'OneVerseRegular';
+  src: url('../assets/fonts/OneVerseRegular.ttf');
 }
 @font-face {
-  font-family: "RaichArtifex";
-  src: url("../assets/fonts/RaichArtifex.otf");
+  font-family: 'RaichArtifex';
+  src: url('../assets/fonts/RaichArtifex.otf');
 }
 @font-face {
-  font-family: "OpenSansRegular";
-  src: url("../assets/fonts/OpenSansRegular.ttf");
+  font-family: 'OpenSansRegular';
+  src: url('../assets/fonts/OpenSansRegular.ttf');
 }
 @font-face {
-  font-family: "Draconis";
-  src: url("../assets/fonts/Draconis.ttf");
+  font-family: 'Draconis';
+  src: url('../assets/fonts/Draconis.ttf');
+}
+
+:root {
+  --font-size-tiny: rem(12);
+  --font-size-small: rem(16);
+  --font-size-medium: rem(24);
+  --font-size-large: rem(32);
+  --font-size-huge: rem(48);
+  --font-size-gargantuan: rem(64);
 }

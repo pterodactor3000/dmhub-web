@@ -1,6 +1,6 @@
 on:
   push:
-    branches: ['main']
+    branches: ['release/**']
 
 jobs:
   build-and-deploy:
@@ -51,7 +51,7 @@ jobs:
         uses: 'google-github-actions/upload-cloud-storage@v0'
         with:
           path: 'dist'
-          destination: 'dmhub-webhub/prod'
+          destination: 'dmhub-webhub-rc'
 
       - name: 'Set up Cloud SDK'
         uses: 'google-github-actions/setup-gcloud@v0'
@@ -60,4 +60,4 @@ jobs:
         run: 'gcloud info'
 
       - name: Deploy
-        run: gcloud app deploy deploy/app.yaml
+        run: gcloud app deploy --appyaml deploy/app-rc.yaml
