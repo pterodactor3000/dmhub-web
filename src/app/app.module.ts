@@ -46,7 +46,7 @@ import { LoaderInterceptor } from './interceptors/loader.interceptor';
     LocalService,
     AngularFireAuthGuard,
     { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true },
-    { provide: PERSISTENCE, useValue: 'session' },
+    { provide: PERSISTENCE, useValue: 'local' },
   ],
   bootstrap: [AppComponent],
 })
