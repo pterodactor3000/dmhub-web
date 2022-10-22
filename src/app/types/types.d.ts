@@ -1,4 +1,4 @@
-import { CharacterSheetFieldDataKeys, ClassKeys, TokenKeys } from './keys.d';
+import { CharacterSheetFieldDataKeys, ClassKeys, TokenKeys } from './keys';
 import { FormControl } from '@angular/forms';
 import {
   QueryParamsKeys,

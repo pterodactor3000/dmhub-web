@@ -1,4 +1,9 @@
-import { Appearance, CharacterResponse, Class, SheetData } from '@data/types';
+import {
+  Appearance,
+  CharacterResponse,
+  Class,
+  SheetData,
+} from 'src/app/types/types';
 import { switchMap, takeUntil } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';

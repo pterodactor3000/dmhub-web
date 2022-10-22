@@ -26,5 +26,40 @@
         ]
       }
     }
+  ], 
+  "dataGroups": [
+    {
+      "name": "longCacheHttpResponses",
+      "urls": [
+        "**/*type=attribute*",
+        "**/*type=background*",
+        "**/*type=charactertype*",
+        "**/*type=class*",
+        "**/*type=condition*",
+        "**/*type=currency*",
+        "**/*type=damagetype*",
+        "**/*type=equipmentcategory*",
+        "**/*type=feat*",
+        "**/*type=globalrule*",
+        "**/*type=image*",
+        "**/*type=item*",
+        "**/*type=language*",
+        "**/*type=objects*",      
+        "**/*type=ongoingeffect*",
+        "**/*type=party*",
+        "**/*type=race*",
+        "**/*type=resource*",
+        "**/*type=skill*",
+        "**/*type=spell*",
+        "**/*type=subclass*",
+        "**/*type=subrace*"
+      ],
+      "cacheConfig": { "maxAge": "7d", "maxSize": 100, "strategy": "performance", "timeout": "3s" }
+    },
+    {
+      "name": "shortCacheHttpResponses",
+      "urls": ["**/*type=character*"],
+      "cacheConfig": { "maxAge": "2d", "maxSize": 100, "strategy": "freshness", "timeout": "3s" }
+    }
   ]
 }

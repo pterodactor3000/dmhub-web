@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { ButtonAttributes } from 'src/app/services/types';
+import { ButtonAttributes } from 'src/app/types/types';
 
 @Component({
   selector: 'wbhb-button',
