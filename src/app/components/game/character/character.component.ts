@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Character } from 'src/app/services/types';
+import { Character } from 'src/app/types/types';
 
 @Component({
   selector: 'wbhb-character',

@@ -10,7 +10,7 @@ import {
   Class,
   QueryParams,
   ImageResponse,
-} from '@data/types';
+} from 'src/app/types/types';
 import { LocalService } from '@data/local.service';
 
 @Component({

@@ -1,10 +1,10 @@
-import { ErrorResponse, ResponsesTypes } from './../../../services/types.d';
+import { ErrorResponse, ResponsesTypes } from '../../../types/types';
 import { BaseComponent } from './../../base/base.component';
 import { switchMap, takeUntil } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { HttpService } from 'src/app/services/http.service';
-import { GameResponse, Character } from 'src/app/services/types';
+import { GameResponse, Character } from 'src/app/types/types';
 import { LocalService } from '@data/local.service';
 
 @Component({
