@@ -7,8 +7,8 @@ env_variables:
 
 handlers:
   - url: /
-    static_files: prod/dist/web-hub/index.html
-    upload: prod/dist/web-hub/index.html
+    static_files: dist/web-hub/index.html
+    upload: dist/web-hub/index.html
 
   - url: /
-    static_dir: prod/dist/web-hub
+    static_dir: dist/web-hub
