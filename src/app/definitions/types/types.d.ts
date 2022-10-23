@@ -1,6 +1,6 @@
 import { FormControl } from '@angular/forms';
 
-import { DataObjectKeys, InputKeys } from '../keys/keys';
+import { DataObjectKeys, InputKeys, MessageTypeKeys } from '../keys/keys';
 import { TypeValue } from './types.character';
 
 export type DataObject = {
@@ -27,6 +27,11 @@ export type InputAttributes = {
   autoResize?: boolean;
   clearable?: boolean;
   required?: boolean;
+};
+
+export type MessageAttributes = {
+  type: MessageTypeKeys;
+  dismissible: boolean;
 };
 
 /* Additional types */
