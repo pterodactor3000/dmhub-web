@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { WbHbModule } from 'src/app/wb-hb.module';
 import { SpeedComponent } from './speed.component';
 
 @NgModule({
   declarations: [SpeedComponent],
   exports: [SpeedComponent],
-  imports: [CommonModule],
+  imports: [WbHbModule],
 })
 export class SpeedModule {}

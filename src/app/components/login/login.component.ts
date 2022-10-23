@@ -1,8 +1,7 @@
-import { AuthService } from './../../services/auth.service';
-
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
+import { AuthService } from '@services/auth.service';
 
 @Component({
   selector: 'wbhb-login',
@@ -23,11 +22,13 @@ export class LoginComponent {
         .catch((error) => {
           var errorCode = error.code;
           var errorMessage = error.message;
+
           if (errorCode === 'auth/wrong-password') {
             alert('Wrong password.');
           } else {
             alert(errorMessage);
           }
+
           console.log(error);
         });
     }

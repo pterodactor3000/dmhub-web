@@ -1,17 +1,17 @@
 import { forkJoin, Observable, takeUntil } from 'rxjs';
-import { HttpService } from 'src/app/services/http.service';
 import { Component, Input, OnInit } from '@angular/core';
-import { BaseComponent } from 'src/app/components/base/base.component';
+import { BaseComponent } from '@base/base.component';
 import {
   TokenData,
   Appearance,
-  ResponsesTypes,
-  Portrait,
   Class,
-  QueryParams,
+  Portrait,
+  ResponsesTypes,
   ImageResponse,
-} from 'src/app/types/types';
-import { LocalService } from '@data/local.service';
+  QueryParams,
+} from '@definitions/types';
+import { HttpService } from '@services/http.service';
+import { LocalService } from '@services/local.service';
 
 @Component({
   selector: 'wbhb-token',

@@ -1,9 +1,9 @@
 import { BaseComponent } from './base.component';
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { WbHbModule } from 'src/app/wb-hb.module';
 
 @NgModule({
   declarations: [BaseComponent],
-  imports: [CommonModule],
+  imports: [WbHbModule],
 })
 export class BaseModule {}

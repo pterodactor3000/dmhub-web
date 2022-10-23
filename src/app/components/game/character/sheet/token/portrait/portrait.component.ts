@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Portrait } from 'src/app/types/types';
+import { Portrait } from '@definitions/types';
 
 @Component({
   selector: 'wbhb-portrait',

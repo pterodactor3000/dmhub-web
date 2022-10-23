@@ -1,14 +1,7 @@
 @use 'sass:math';
 
-@import '~bootstrap/scss/mixins';
-
-/*
-  breakpoints usage
-  @include layout(desktop, min, landscape) {
-    content: '';
-  }
-  2nd and 3rd value is optional
-*/
+@import 'bootstrap/scss/mixins';
+@import '_functions';
 
 $breakpoints: (
   mobile: 375px,

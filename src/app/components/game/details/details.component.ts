@@ -1,11 +1,15 @@
-import { ErrorResponse, ResponsesTypes } from '../../../types/types';
-import { BaseComponent } from './../../base/base.component';
 import { switchMap, takeUntil } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { HttpService } from 'src/app/services/http.service';
-import { GameResponse, Character } from 'src/app/types/types';
-import { LocalService } from '@data/local.service';
+import { BaseComponent } from '@base/base.component';
+import {
+  ResponsesTypes,
+  ErrorResponse,
+  GameResponse,
+  Character,
+} from '@definitions/types';
+import { HttpService } from '@services/http.service';
+import { LocalService } from '@services/local.service';
 
 @Component({
   selector: 'wbhb-details',

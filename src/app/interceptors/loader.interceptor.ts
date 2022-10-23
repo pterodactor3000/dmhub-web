@@ -5,20 +5,29 @@ import {
   HttpEvent,
   HttpInterceptor,
 } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { finalize } from 'rxjs/operators';
-import { LoaderService } from '../components/base/loader/loader.service';
+import { BehaviorSubject, Observable, of, timer } from 'rxjs';
+import { debounce, finalize, map } from 'rxjs/operators';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class LoaderInterceptor implements HttpInterceptor {
-  constructor(private loaderService: LoaderService) {}
+  private activeRequestCount: BehaviorSubject<number> =
+    new BehaviorSubject<number>(0);
+
+  isLoading: Observable<boolean> = this.activeRequestCount.pipe(
+    map((count) => count > 0),
+    debounce((busy) => (busy ? timer(200) : of(0)))
+  );
 
   intercept(
     request: HttpRequest<unknown>,
     next: HttpHandler
   ): Observable<HttpEvent<unknown>> {
-    this.loaderService.show();
-
-    return next.handle(request).pipe(finalize(() => this.loaderService.hide()));
+    return next
+      .handle(request)
+      .pipe(
+        finalize(() =>
+          this.activeRequestCount.next(this.activeRequestCount.getValue() - 1)
+        )
+      );
   }
 }

@@ -1,50 +1,5 @@
-/* Response keys */
-export type CharacterResponseKeys =
-  | 'appearance'
-  | 'characterName'
-  | 'createdTimestamp'
-  | 'baseAttributes'
-  | 'classes'
-  | 'currency'
-  | 'damage_taken'
-  | 'equipment'
-  | 'inventory'
-  | 'levelChoices'
-  | 'raceid'
-  | 'backgroundid'
-  | 'preparedSpells'
-  | 'innateProperties'
-  | 'notes';
-export type GameResponseKeys =
-  | 'characters'
-  | 'coverart'
-  | 'description'
-  | 'descriptionDetails'
-  | 'ownerDisplayName';
-export type ErrorResponseKeys = 'message' | 'type';
-
-/* Keys for indexing purpouses */
-export type QueryParamsKeys = 'gameid' | 'type' | 'id' | 'pretty';
-export type DataObjectKeys = 'object' | 'desc';
+/* Keys regarding character data */
 export type CharacterKeys = 'name' | 'owner' | 'summaryDescription' | 'id';
-export type NotesKeys = 'text' | 'title';
-export type InputKeys =
-  | 'color'
-  | 'custom'
-  | 'date'
-  | 'datetime-local'
-  | 'email'
-  | 'month'
-  | 'number'
-  | 'password'
-  | 'search'
-  | 'tel'
-  | 'text'
-  | 'time'
-  | 'url'
-  | 'week';
-export type TypeValueKeys = 'type' | 'value' | 'icon' | 'align' | 'color';
-export type InputAdditionalFieldsKeys = 'prefix' | 'suffix' | 'hint';
 export type AppearanceKeys =
   | 'portraitOffset'
   | 'tokenZoom'
@@ -78,7 +33,6 @@ export type CharacterSheetFieldKeys =
   | 'defenses';
 export type CharacterSheetFieldDataKeys = `${CharacterSheetFieldKeys}Data`;
 export type TokenKeys = 'appearance' | 'characterName' | 'classes' | 'raceid';
-
 export type CharacterDetailsKeys =
   | 'raceid'
   | 'backgroundid'

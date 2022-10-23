@@ -1,10 +1,10 @@
 import { NotesComponent } from './notes.component';
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { WbHbModule } from 'src/app/wb-hb.module';
 
 @NgModule({
   declarations: [NotesComponent],
   exports: [NotesComponent],
-  imports: [CommonModule],
+  imports: [WbHbModule],
 })
 export class NotesModule {}

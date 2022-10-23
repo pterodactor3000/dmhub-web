@@ -21,7 +21,8 @@
     "paths": {
       "@env": ["src/environments/environment"],
       "@base/*": ["src/app/components/base/*"],
-      "@data/*": ["src/app/services/*"]
+      "@definitions/*": ["src/app/definitions/*"],
+      "@services/*": ["src/app/services/*", "src/app/interceptors/*"]
     }
   },
   "angularCompilerOptions": {

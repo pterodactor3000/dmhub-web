@@ -54,12 +54,12 @@
         "**/*type=subclass*",
         "**/*type=subrace*"
       ],
-      "cacheConfig": { "maxAge": "7d", "maxSize": 100, "strategy": "performance", "timeout": "3s" }
+      "cacheConfig": { "maxAge": "7d", "maxSize": 100, "strategy": "performance" }
     },
     {
       "name": "shortCacheHttpResponses",
       "urls": ["**/*type=character*"],
-      "cacheConfig": { "maxAge": "2d", "maxSize": 100, "strategy": "freshness", "timeout": "3s" }
+      "cacheConfig": { "maxAge": "2d", "maxSize": 100, "strategy": "freshness", "timeout": "5s" }
     }
   ]
 }

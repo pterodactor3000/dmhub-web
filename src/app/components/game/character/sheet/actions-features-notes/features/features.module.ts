@@ -1,10 +1,10 @@
 import { FeaturesComponent } from './features.component';
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { WbHbModule } from 'src/app/wb-hb.module';
 
 @NgModule({
   declarations: [FeaturesComponent],
   exports: [FeaturesComponent],
-  imports: [CommonModule],
+  imports: [WbHbModule],
 })
 export class FeaturesModule {}
