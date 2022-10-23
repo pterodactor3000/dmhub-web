@@ -22,6 +22,12 @@ also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 Default configuration for build is `production`.
 
+### PWA
+
+For a version with service worker detection run `npm run build:watch`.
+
+_Note:_ For using that, in another terminal run `npm run start:server`.
+
 ### Production
 
 By default run `npm run build` to build the project. The build artifacts will be
@@ -30,12 +36,6 @@ stored in the `dist/` directory.
 ### Development
 
 For `development` build run `npm run build:dev`.
-
-### PWA
-
-For a version with service worker detection run `npm run build:watch`.
-
-_Note:_ For using that, in another terminal run `npm run start:server`.
 
 ## Running end-to-end tests
 
