@@ -1,0 +1,5 @@
+<section *ngIf="messageAttributes" class="message">
+  <ngb-alert type="custom" [dismissible]="messageAttributes.dismissible">
+    <ng-content select="[message-content]"></ng-content>
+  </ngb-alert>
+</section>

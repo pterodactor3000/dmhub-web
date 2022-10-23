@@ -19,3 +19,12 @@ export type InputKeys =
   | 'week';
 export type TypeValueKeys = 'type' | 'value' | 'icon' | 'align' | 'color';
 export type InputAdditionalFieldsKeys = 'prefix' | 'suffix' | 'hint';
+export type MessageTypeKeys =
+  | 'success'
+  | 'info'
+  | 'warning'
+  | 'danger'
+  | 'primary'
+  | 'secondary'
+  | 'light'
+  | 'dark';

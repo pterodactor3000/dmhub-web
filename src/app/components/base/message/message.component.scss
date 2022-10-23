@@ -1,0 +1,16 @@
+.message {
+  position: absolute;
+  width: -webkit-fill-available;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  .alert-custom {
+    color: #000000;
+    background-color: rgb(200, 240, 135);
+    border-color: rgba(107, 107, 107, 0.5);
+    border-radius: 0;
+    text-align: center;
+  }
+}

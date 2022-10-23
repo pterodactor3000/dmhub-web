@@ -10,6 +10,7 @@ export const environment = {
   firebase: {
     apiKey: 'AIzaSyCp2iE9wj-sKjUy2w4-ndjEediUGvB5YwY',
   },
+  refreshRate: 1000 * 10,
 };
 
 /*
