@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { WbHbModule } from 'src/app/wb-hb.module';
 import { PortraitComponent } from './portrait.component';
 
 @NgModule({
   declarations: [PortraitComponent],
   exports: [PortraitComponent],
-  imports: [CommonModule],
+  imports: [WbHbModule],
 })
 export class PortraitModule {}

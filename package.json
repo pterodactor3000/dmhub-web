@@ -4,10 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "start:server":"http-server -p 4550 -c-1 -P http://localhost:4550? dist/web-hub",
+    "start:server": "http-server -p 4550 -c-1 -P http://localhost:4550? dist/web-hub",
     "build": "ng build",
     "build:dev": "ng build --configuration development",
-    "build:prod:watch": "ng build --watch --configuration production",
+    "build:watch": "ng build --watch --configuration production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint"
@@ -51,6 +51,7 @@
     "@typescript-eslint/parser": "5.37.0",
     "eslint": "^8.23.1",
     "eslint-config-prettier": "^8.5.0",
+    "http-server": "^14.1.1",
     "jasmine-core": "~4.4.0",
     "karma": "~6.4.1",
     "karma-chrome-launcher": "~3.1.1",

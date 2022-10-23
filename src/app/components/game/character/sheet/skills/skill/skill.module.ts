@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { WbHbModule } from 'src/app/wb-hb.module';
 import { SkillComponent } from './skill.component';
 
 @NgModule({
   declarations: [SkillComponent],
   exports: [SkillComponent],
-  imports: [CommonModule],
+  imports: [WbHbModule],
 })
 export class SkillModule {}

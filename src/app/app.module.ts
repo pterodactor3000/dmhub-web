@@ -1,4 +1,3 @@
-import { LocalService } from './services/local.service';
 import { NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
@@ -14,12 +13,14 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { environment } from '../environments/environment';
-import { HttpService } from './services/http.service';
 import { WbHbModule } from './wb-hb.module';
-import { HeaderModule } from './components/base/header/header.module';
-import { LoaderModule } from './components/base/loader/loader.module';
-import { LoaderInterceptor } from './interceptors/loader.interceptor';
+import { API_URL } from '@services/tokens';
+import { environment } from '@env';
+import { HttpService } from '@services/http.service';
+import { LocalService } from '@services/local.service';
+import { HeaderModule } from '@base/header/header.module';
+import { LoaderModule } from '@base/loader/loader.module';
+import { LoaderInterceptor } from '@services/loader.interceptor';
 
 @NgModule({
   declarations: [AppComponent],
@@ -45,7 +46,8 @@ import { LoaderInterceptor } from './interceptors/loader.interceptor';
     HttpService,
     LocalService,
     AngularFireAuthGuard,
-    { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true },
+    { provide: API_URL, useValue: environment.baseUrl },
+    { provide: HTTP_INTERCEPTORS, useExisting: LoaderInterceptor, multi: true },
     { provide: PERSISTENCE, useValue: 'local' },
   ],
   bootstrap: [AppComponent],

@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { WbHbModule } from 'src/app/wb-hb.module';
 import { HitpointsComponent } from './hitpoints.component';
 
 @NgModule({
   declarations: [HitpointsComponent],
   exports: [HitpointsComponent],
-  imports: [CommonModule],
+  imports: [WbHbModule],
 })
 export class HitpointsModule {}

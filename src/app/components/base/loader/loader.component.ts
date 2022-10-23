@@ -1,6 +1,6 @@
-import { Subject } from 'rxjs';
-import { Component } from '@angular/core';
-import { LoaderService } from './loader.service';
+import { Observable } from 'rxjs';
+import { Component, inject } from '@angular/core';
+import { LoaderInterceptor } from '@services/loader.interceptor';
 
 @Component({
   selector: 'wbhb-loader',
@@ -8,7 +8,5 @@ import { LoaderService } from './loader.service';
   styleUrls: ['./loader.component.scss'],
 })
 export class LoaderComponent {
-  isLoading$: Subject<boolean> = this.loaderService.isLoadingSubject;
-
-  constructor(private loaderService: LoaderService) {}
+  isLoading: Observable<boolean> = inject(LoaderInterceptor)?.isLoading;
 }
