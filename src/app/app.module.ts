@@ -11,7 +11,7 @@ import {
 } from '@angular/fire/compat/auth-guard';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { API_URL } from '@services/tokens';
+import { API_URL } from '@definitions/tokens';
 import { environment } from '@env';
 import { HttpService } from '@services/http.service';
 import { LocalService } from '@services/local.service';

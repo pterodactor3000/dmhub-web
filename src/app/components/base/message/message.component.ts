@@ -1,4 +1,10 @@
-import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
+import {
+  Component,
+  Input,
+  ChangeDetectionStrategy,
+  Output,
+  EventEmitter,
+} from '@angular/core';
 import { MessageAttributes } from '@definitions/types';
 
 @Component({
@@ -9,4 +15,5 @@ import { MessageAttributes } from '@definitions/types';
 })
 export class MessageComponent {
   @Input() messageAttributes!: MessageAttributes;
+  @Output() click: EventEmitter<void> = new EventEmitter<void>();
 }

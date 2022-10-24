@@ -1,9 +1,9 @@
-import { API_URL } from './tokens/api';
 import { Inject, Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { QueryParams, ResponsesTypes } from '@definitions/types';
 import { QueryParamsKeys } from '@definitions/keys';
+import { API_URL } from '@definitions/tokens';
 
 @Injectable({
   providedIn: 'root',
