@@ -56,5 +56,3 @@ jobs:
           working_directory: dist
           # The yaml files for the services or configurations you want to deploy. If not given, defaults to app.yaml in the current directory. If that is not found, attempts to automatically generate necessary configuration files (such as app.yaml) in the current directory.
           deliverables: app-dev.yaml
-          # Service account key to use for authentication. This should be the JSON formatted private key which can be exported from the Cloud Console. The value can be raw or base64-encoded.
-          credentials: ${{ secrets.GCP_SA_KEY }}
