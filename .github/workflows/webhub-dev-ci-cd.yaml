@@ -53,6 +53,6 @@ jobs:
           # The GCP project ID. Overrides project ID set by credentials.
           project_id: hazel-delight-288708
           # The path to set the working directory. The deliverables will be referenced from this path.
-          working_directory: /
+          working_directory: web-hub
           # The yaml files for the services or configurations you want to deploy. If not given, defaults to app.yaml in the current directory. If that is not found, attempts to automatically generate necessary configuration files (such as app.yaml) in the current directory.
-          deliverables: app-dev.yaml
+          deliverables: web-hub/app-dev.yaml
