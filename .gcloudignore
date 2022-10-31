@@ -1,0 +1,9 @@
+# exclude all
+
+/*
+
+# include dist and yaml
+
+!/dist
+!/dist/**
+!/app*.yaml
