@@ -1,7 +1,7 @@
 # include dist and yaml
 
 !/dist
-!/app*.yaml
+!/**/app*.yaml
 
 /.*
 /node_modules
