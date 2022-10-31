@@ -60,4 +60,4 @@ jobs:
         run: 'gcloud info'
 
       - name: Deploy
-        run: gcloud app deploy deploy/app.yaml
+        run: gcloud app deploy .deploy/app.yaml
