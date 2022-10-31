@@ -7,6 +7,7 @@
 /node_modules
 /src
 .*
+karma.conf.js
 LICENSE
 *.json
 *.md
