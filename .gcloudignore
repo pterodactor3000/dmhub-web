@@ -1,9 +1,12 @@
-# exclude all
-
-/*
-
 # include dist and yaml
 
 !/dist
-!/dist/**
 !/app*.yaml
+
+/.*
+/node_modules
+/src
+.*
+LICENSE
+*.json
+*.md
