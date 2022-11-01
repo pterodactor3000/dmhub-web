@@ -1,24 +1,23 @@
-import { environment } from './../../environments/environment';
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { QueryParams, ResponsesTypes } from './types';
-import { QueryParamsKeys } from './keys';
+import { QueryParams, ResponsesTypes } from '@definitions/types';
+import { QueryParamsKeys } from '@definitions/keys';
+import { API_URL } from '@definitions/tokens';
 
 @Injectable({
   providedIn: 'root',
 })
 export class HttpService {
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    @Inject(API_URL) private apiUrl: string
+  ) {}
 
   get(query: QueryParams): Observable<ResponsesTypes> {
-    return this.http.get<ResponsesTypes>(`${this.getBaseUrl()}query`, {
+    return this.http.get<ResponsesTypes>(`${this.apiUrl}query`, {
       params: this.buildParams(query),
     });
-  }
-
-  private getBaseUrl(): string {
-    return environment.baseUrl;
   }
 
   private buildParams(query: QueryParams): HttpParams {

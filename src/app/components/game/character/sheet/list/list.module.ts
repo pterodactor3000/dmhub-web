@@ -1,11 +1,11 @@
 import { ItemModule } from './item/item.module';
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { ListComponent } from './list.component';
+import { WbHbModule } from 'src/app/wb-hb.module';
 
 @NgModule({
   declarations: [ListComponent],
   exports: [ListComponent],
-  imports: [CommonModule, ItemModule],
+  imports: [WbHbModule, ItemModule],
 })
 export class ListModule {}

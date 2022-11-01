@@ -1,9 +1,14 @@
-import { Appearance, CharacterResponse, Class, SheetData } from '@data/types';
 import { switchMap, takeUntil } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { BaseComponent } from '@base/base.component';
-import { HttpService } from 'src/app/services/http.service';
+import {
+  SheetData,
+  CharacterResponse,
+  Appearance,
+  Class,
+} from '@definitions/types';
+import { HttpService } from '@services/http.service';
 
 @Component({
   selector: 'wbhb-sheet',

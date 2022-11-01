@@ -6,5 +6,36 @@
   "display": "standalone",
   "scope": "./",
   "start_url": "./",
-  "icons": []
+  "icons": [{
+    "src": "assets/icons/logo-128.png",
+    "sizes": "128x128"
+  },
+    {
+    "src": "assets/icons/logo-256.png",
+    "sizes": "256x256"
+  },
+    {
+    "src": "assets/icons/logo-512.png",
+    "sizes": "512x512"
+  },
+    {
+    "src": "assets/icons/logo.png",
+    "sizes": "1024x1024"
+  },
+    {
+    "src": "assets/icons/logo-black-128.png",
+    "sizes": "128x128"
+  },
+    {
+    "src": "assets/icons/logo-black-256.png",
+    "sizes": "256x256"
+  },
+    {
+    "src": "assets/icons/logo-black-512.png",
+    "sizes": "512x512"
+  },
+    {
+    "src": "assets/icons/logo-black.png",
+    "sizes": "1024x1024"
+  }]
 }

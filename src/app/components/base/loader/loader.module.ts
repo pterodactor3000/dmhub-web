@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { WbHbModule } from 'src/app/wb-hb.module';
 import { LoaderComponent } from './loader.component';
 
 @NgModule({
   declarations: [LoaderComponent],
-  imports: [CommonModule],
+  imports: [WbHbModule],
   exports: [LoaderComponent],
 })
 export class LoaderModule {}

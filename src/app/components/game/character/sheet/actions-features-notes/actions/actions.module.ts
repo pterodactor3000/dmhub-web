@@ -1,10 +1,10 @@
 import { ActionsComponent } from './actions.component';
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { WbHbModule } from 'src/app/wb-hb.module';
 
 @NgModule({
   declarations: [ActionsComponent],
   exports: [ActionsComponent],
-  imports: [CommonModule],
+  imports: [WbHbModule],
 })
 export class ActionsModule {}

@@ -1,6 +1,6 @@
-import { AuthService } from './../../../services/auth.service';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '@services/auth.service';
 
 @Component({
   selector: 'wbhb-header',
@@ -16,6 +16,7 @@ export class HeaderComponent {
       .then(() => this.router.navigate(['login']))
       .catch((error) => {
         var errorMessage = error.message;
+
         alert(errorMessage);
 
         console.log(error);
