@@ -1,0 +1,13 @@
+# include dist and yaml
+
+!/dist
+!/**/app*.yaml
+
+/.*
+/node_modules
+/src
+.*
+karma.conf.js
+LICENSE
+*.json
+*.md

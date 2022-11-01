@@ -19,7 +19,7 @@ jobs:
           node-version: 18.x
 
       - name: Cache node modules
-        uses: actions/cache@v2
+        uses: actions/cache@v3.0.11
         with:
           path: ~/.npm
           key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
@@ -60,4 +60,4 @@ jobs:
         run: 'gcloud info'
 
       - name: Deploy
-        run: gcloud app deploy --appyaml deploy/app-dev.yaml
+        run: gcloud app deploy --appyaml .deploy/app-dev.yaml
