@@ -20,7 +20,7 @@
   },
     {
     "src": "assets/icons/logo.png",
-    "sizes": "1024x1024"
+    "sizes": "2048x2048"
   },
     {
     "src": "assets/icons/logo-black-128.png",
@@ -36,6 +36,6 @@
   },
     {
     "src": "assets/icons/logo-black.png",
-    "sizes": "1024x1024"
+    "sizes": "2048x2048"
   }]
 }
