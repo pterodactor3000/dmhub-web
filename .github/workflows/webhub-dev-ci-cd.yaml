@@ -30,6 +30,14 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Create env file
+        run: |
+          touch .env
+          echo API_KEY=${{ secrets.API_KEY }} >> .env
+          echo API_URL=${{ secrets.API_URL }} >> .env
+          echo REFRESH_RATE=3600000 >> .env
+          cat .env
+
       - name: Build
         run: npm run build:dev
 
