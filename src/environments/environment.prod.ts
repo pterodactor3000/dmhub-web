@@ -4,7 +4,7 @@ export const environment = {
   title: 'WebHub',
   description: 'Web catalog of DMHub resources',
   firebase: {
-    apiKey: 'AIzaSyCp2iE9wj-sKjUy2w4-ndjEediUGvB5YwY',
+    apiKey: '',
   },
-  refreshRate: 1000 * 60 * 60,
+  refreshRate: 1000 * 10,
 };
