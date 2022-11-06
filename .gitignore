@@ -14,7 +14,6 @@ yarn-error.log
 # IDEs and editors
 .idea/
 .project
-.env
 .classpath
 .c9/
 *.launch
@@ -43,3 +42,5 @@ testem.log
 Thumbs.db
 
 .editorconfig
+.env
+**/environments/environment.onprem.ts

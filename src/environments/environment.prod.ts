@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  baseUrl: 'https://us-central1-dmtool-cad62.cloudfunctions.net/',
+  baseUrl: '',
   title: 'WebHub',
   description: 'Web catalog of DMHub resources',
   firebase: {
