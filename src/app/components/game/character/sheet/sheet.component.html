@@ -1,12 +1,12 @@
-<!-- {{ character | json }} -->
 <div class="content content--full-height">
   <div class="grid sheet">
     <div class="grid__column--3--bd grid__column--4--bm sheet--left">
 
       <wbhb-token *ngIf="sheetData.tokenData" class="sheet__token" [tokenData]="sheetData.tokenData"></wbhb-token>
-      <wbhb-list class="sheet__conditions"></wbhb-list>
+
+      <wbhb-conditions class="sheet__conditions"></wbhb-conditions>
       <wbhb-list class="sheet__defenses"></wbhb-list>
-      <wbhb-list class="sheet__proficiencies"></wbhb-list>
+      <wbhb-proficiencies class="sheet__proficiencies"></wbhb-proficiencies>
 
     </div>
     <div class="grid__column--9--bd grid__column--4--bm grid__column-start--4--bd sheet--right">

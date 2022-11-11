@@ -1,20 +1,20 @@
 /* Response keys */
 export type CharacterResponseKeys =
   | 'appearance'
-  | 'characterName'
-  | 'createdTimestamp'
+  | 'backgroundid'
   | 'baseAttributes'
+  | 'characterName'
   | 'classes'
+  | 'createdTimestamp'
   | 'currency'
   | 'damage_taken'
   | 'equipment'
+  | 'innateProperties'
   | 'inventory'
   | 'levelChoices'
-  | 'raceid'
-  | 'backgroundid'
+  | 'notes'
   | 'preparedSpells'
-  | 'innateProperties'
-  | 'notes';
+  | 'raceid';
 export type GameResponseKeys =
   | 'characters'
   | 'coverart'
