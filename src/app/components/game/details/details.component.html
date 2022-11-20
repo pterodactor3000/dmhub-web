@@ -24,7 +24,7 @@
   <section *ngIf="isError" class="error grid">
     <p class="error__message grid__column--12--bd grid__column--4--bm">{{ errorMessage }}</p>
     <wbhb-button class="grid__column--2--bd grid__column--2--bm grid__column-start--6--bd grid__column-start--2--bm"
-      [attributes]="{color: 'primary', label: 'Search again'}" (click)="click()">
+      [attributes]="{color: 'primary', label: 'Search again'}" (clicked)="click()">
     </wbhb-button>
   </section>
 </div>

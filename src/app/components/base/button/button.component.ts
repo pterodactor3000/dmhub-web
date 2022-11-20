@@ -9,5 +9,5 @@ import { ButtonAttributes } from '@definitions/types';
 export class ButtonComponent {
   @Input() attributes!: ButtonAttributes;
 
-  @Output() click: EventEmitter<void> = new EventEmitter<void>();
+  @Output() clicked: EventEmitter<void> = new EventEmitter<void>();
 }

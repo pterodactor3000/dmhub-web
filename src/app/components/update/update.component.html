@@ -1,5 +1,5 @@
 <wbhb-message *ngIf="unrecoverableError | async" [messageAttributes]="{ type: 'danger', dismissible: false }"
-  (click)="reloadApp()">
+  (clicked)="reloadApp()">
   <div message-content>
     <div>
       We encountered a problem with updating to newest version! Please click here to reload.
@@ -8,7 +8,7 @@
 </wbhb-message>
 
 <wbhb-message *ngIf="updateAvailable | async" [messageAttributes]="{ type: 'info', dismissible: false }"
-  (click)="activateUpdate()">
+  (clicked)="activateUpdate()">
   <div message-content>
     <div>
       There is a new version available! Click here to update.

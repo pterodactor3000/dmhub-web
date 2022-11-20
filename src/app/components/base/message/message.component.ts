@@ -15,5 +15,5 @@ import { MessageAttributes } from '@definitions/types';
 })
 export class MessageComponent {
   @Input() messageAttributes!: MessageAttributes;
-  @Output() click: EventEmitter<void> = new EventEmitter<void>();
+  @Output() clicked: EventEmitter<void> = new EventEmitter<void>();
 }

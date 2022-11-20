@@ -9,6 +9,7 @@ export type CharacterResponseKeys =
   | 'currency'
   | 'damage_taken'
   | 'equipment'
+  | 'id'
   | 'innateProperties'
   | 'inventory'
   | 'levelChoices'

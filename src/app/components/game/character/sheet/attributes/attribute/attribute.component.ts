@@ -1,12 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'wbhb-attribute',
   templateUrl: './attribute.component.html',
   styleUrls: ['./attribute.component.scss'],
 })
-export class AttributeComponent implements OnInit {
+export class AttributeComponent {
   constructor() {}
-
-  ngOnInit(): void {}
 }
