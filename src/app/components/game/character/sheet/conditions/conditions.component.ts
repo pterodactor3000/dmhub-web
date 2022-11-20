@@ -1,15 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'wbhb-conditions',
   templateUrl: './conditions.component.html',
-  styleUrls: ['./conditions.component.scss']
+  styleUrls: ['./conditions.component.scss'],
 })
-export class ConditionsComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class ConditionsComponent {
+  constructor() {}
 }

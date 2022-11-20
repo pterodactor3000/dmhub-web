@@ -25,7 +25,6 @@ import { WbHbModule } from './wb-hb.module';
 import { UpdateModule } from './components/update/update.module';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
@@ -49,7 +48,10 @@ import { EffectsModule } from '@ngrx/effects';
       registrationStrategy: 'registerWhenStable:30000',
     }),
     StoreModule.forRoot({}, {}),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25,
+      logOnly: environment.production,
+    }),
     EffectsModule.forRoot([]),
   ],
   providers: [

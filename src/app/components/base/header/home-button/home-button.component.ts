@@ -1,12 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'wbhb-home-button',
   templateUrl: './home-button.component.html',
   styleUrls: ['./home-button.component.scss'],
 })
-export class HomeButtonComponent implements OnInit {
+export class HomeButtonComponent {
   constructor() {}
-
-  ngOnInit(): void {}
 }
