@@ -21,16 +21,17 @@ export type InnatePropertiesKeys =
   | 'savingThrows'
   | 'skillProficiencies';
 export type CharacterSheetFieldKeys =
-  | 'token'
-  | 'attributes'
-  | 'skills'
-  | 'resources'
-  | 'hitpoints'
-  | 'armorClassSpeed'
   | 'actionsFeaturesNotes'
-  | 'savingThrows'
+  | 'armorClassSpeed'
+  | 'attributes'
+  | 'defenses'
+  | 'hitpoints'
+  | 'ongoingEffects'
   | 'proficiencies'
-  | 'defenses';
+  | 'resources'
+  | 'savingThrows'
+  | 'skills'
+  | 'token';
 export type CharacterSheetFieldDataKeys = `${CharacterSheetFieldKeys}Data`;
 export type TokenKeys = 'appearance' | 'characterName' | 'classes' | 'raceid';
 export type CharacterDetailsKeys =
@@ -49,3 +50,27 @@ export type CharacterDetailsKeys =
   | 'innateProperties'
   | 'notes'
   | 'preparedSpells';
+export type OngoingEffectsKeys = 'id' | 'ongoingEffectId' | 'stacks' | 'time';
+export type OngoingEffectDisplayKeys =
+  | 'bgcolor'
+  | 'blend'
+  | 'brightness'
+  | 'hueshift'
+  | 'saturation';
+export type BgColorObjectKeys = 'a' | 'h' | 's' | 'v';
+export type ModifiersKeys =
+  | 'activationCondition'
+  | 'behavior'
+  | 'conditions'
+  | 'damageFilterCondition'
+  | 'description'
+  | 'guid'
+  | 'modifyRoll'
+  | 'name'
+  | 'resistances'
+  | 'save'
+  | 'skill'
+  | 'source'
+  | 'sourceguid'
+  | 'subtype';
+export type EffectModifierResistanceKeys = 'apply' | 'damageType';

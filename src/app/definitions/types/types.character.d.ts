@@ -1,4 +1,9 @@
 import {
+  BgColorObjectKeys,
+  EffectModifierResistanceKeys,
+  ModifiersKeys,
+} from './../keys/keys.character.d';
+import {
   NotesKeys,
   TypeValueKeys,
   InputAdditionalFieldsKeys,
@@ -12,7 +17,10 @@ import {
   CharacterSheetFieldDataKeys,
   TokenKeys,
   PortraitKeys,
+  OngoingEffectsKeys,
+  OngoingEffectDisplayKeys,
 } from '../keys/keys.character';
+import { Guid } from './types';
 
 export type Character = {
   [key in CharacterKeys]: string;
@@ -43,11 +51,31 @@ export type Class = {
 };
 
 export type SheetData = {
-  [key in CharacterSheetFieldDataKeys]?: TokenData;
+  [key in CharacterSheetFieldDataKeys]?: TokenData | OngoingEffectsData;
 };
 
 export type TokenData = {
   [key in TokenKeys]: Appearance | Class[] | string;
+};
+
+export type OngoingEffectsData = {
+  [key in OngoingEffectsKeys]: Guid | number | { time: number };
+};
+
+export type OngoingEffectDisplay = {
+  [key in OngoingEffectDisplayKeys]: BgColorObject | boolean | string | number;
+};
+
+export type BgColorObject = {
+  [key in BgColorObjectKeys]: string | number;
+};
+
+export type EffectModifiers = {
+  [key in ModifiersKeys]?: EffectModifierResistance[] | Guid | string;
+};
+
+export type EffectModifierResistance = {
+  [key in EffectModifierResistanceKeys]: string;
 };
 
 export type Portrait = {

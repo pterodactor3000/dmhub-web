@@ -3,14 +3,17 @@ import {
   GameResponseKeys,
   CharacterResponseKeys,
   ErrorResponseKeys,
+  OngoingEffectResponseKeys,
 } from '../keys/keys.response';
-import { DataObject } from './types';
+import { DataObject, Guid } from './types';
 import {
   Character,
   Note,
   Class,
   Appearance,
   Attributes,
+  EffectModifiers,
+  OngoingEffectDisplay,
 } from './types.character';
 
 /* Key for general get */
@@ -19,7 +22,8 @@ export type ResponsesTypes =
   | DataObjectsResponse
   | GameResponse
   | ErrorResponse
-  | CharacterResponse;
+  | CharacterResponse
+  | OngoingEffectResponse;
 
 /* Response types */
 export type DataObjectsResponse = {
@@ -46,6 +50,15 @@ export type ErrorResponse = {
 
 export type ImageResponse = {
   url: string;
+};
+
+export type OngoingEffectResponse = {
+  [key in OngoingEffectResponseKeys]?:
+    | boolean
+    | string
+    | Guid
+    | EffectModifiers[]
+    | OngoingEffectDisplay;
 };
 
 export type QueryParams = {

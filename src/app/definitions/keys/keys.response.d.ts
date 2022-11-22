@@ -14,6 +14,7 @@ export type CharacterResponseKeys =
   | 'inventory'
   | 'levelChoices'
   | 'notes'
+  | 'ongoingEffects'
   | 'preparedSpells'
   | 'raceid';
 export type GameResponseKeys =
@@ -23,3 +24,16 @@ export type GameResponseKeys =
   | 'descriptionDetails'
   | 'ownerDisplayName';
 export type ErrorResponseKeys = 'message' | 'type';
+export type OngoingEffectResponseKeys =
+  | 'canEndWithAction'
+  | 'description'
+  | 'display'
+  | 'emoji'
+  | 'endActionType'
+  | 'guid'
+  | 'iconid'
+  | 'id'
+  | 'modifiers'
+  | 'mtime'
+  | 'name'
+  | 'source';
