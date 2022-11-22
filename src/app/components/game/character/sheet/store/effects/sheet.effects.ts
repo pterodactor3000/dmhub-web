@@ -9,6 +9,8 @@ import { Observable, of, switchMap } from 'rxjs';
 
 @Injectable()
 export class SheetEffects {
+  constructor(private actions: Actions, private service: HttpService) {}
+
   loadSheet = createEffect(() => {
     return this.actions.pipe(
       ofType(sheetActions.loadSheet),
@@ -16,7 +18,7 @@ export class SheetEffects {
         (this.service.get(params) as Observable<CharacterResponse>).pipe(
           map((response: ResponsesTypes) => {
             return sheetActions.loadSheetSuccess({
-              character: { ...response, id: params.id } as CharacterResponse,
+              character: response as CharacterResponse,
             });
           }),
           catchError(() => of(sheetActions.loadSheetFailure()))
@@ -35,5 +37,12 @@ export class SheetEffects {
     { dispatch: false }
   );
 
-  constructor(private actions: Actions, private service: HttpService) {}
+  loadOngoingEffects = createEffect(() => {
+    return this.actions.pipe(
+      ofType(sheetActions.loadOngoingEffects),
+      switchMap(({ params }) => {
+        // TODO: finish it!
+      })
+    );
+  });
 }

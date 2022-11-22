@@ -6,6 +6,8 @@ import {
   CharacterResponse,
   Appearance,
   Class,
+  TokenData,
+  OngoingEffectsData,
 } from '@definitions/types';
 import { Store } from '@ngrx/store';
 import { selectSheet } from './store/selectors/sheet.selectors';
@@ -61,7 +63,7 @@ export class SheetComponent implements OnInit {
       characterName: this.character.characterName as string,
       classes: this.character.classes as Class[],
       raceid: this.character.raceid as string,
-    };
+    } as TokenData;
 
     return this.sheetData;
   }
