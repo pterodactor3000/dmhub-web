@@ -1,8 +1,9 @@
 <div class="content content--full-height">
-  <div *ngIf="data | async as data" class="grid sheet">
+  <div *ngIf="characterResponseData | async as characterResponseData" class="grid sheet">
     <div class="grid__column--3--bd grid__column--4--bm sheet--left">
 
-      <wbhb-token *ngIf="sheetData.tokenData" class="sheet__token" [tokenData]="sheetData.tokenData"></wbhb-token>
+      <wbhb-token *ngIf="sheetData.tokenData" class="sheet__token" [tokenData]="sheetData.tokenData">
+      </wbhb-token>
 
       <wbhb-conditions class="sheet__conditions"></wbhb-conditions>
       <wbhb-list class="sheet__defenses"></wbhb-list>

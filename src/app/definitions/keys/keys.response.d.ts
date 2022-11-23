@@ -24,16 +24,26 @@ export type GameResponseKeys =
   | 'descriptionDetails'
   | 'ownerDisplayName';
 export type ErrorResponseKeys = 'message' | 'type';
-export type OngoingEffectResponseKeys =
+export type OngoingEffectsResponseKeys =
+  | '__typeName'
+  | '_luaTable'
   | 'canEndWithAction'
+  | 'condition'
+  | 'ctime'
+  | 'custom'
   | 'description'
   | 'display'
   | 'emoji'
   | 'endActionType'
   | 'guid'
+  | 'hidden'
   | 'iconid'
   | 'id'
+  | 'implementation'
   | 'modifiers'
   | 'mtime'
   | 'name'
-  | 'source';
+  | 'source'
+  | 'stackable'
+  | 'statusEffect'
+  | 'transformation';

@@ -17,6 +17,8 @@ import { SkillsModule } from './skills/skills.module';
 import * as fromSheet from './store/reducers/sheet.reducer';
 import { SheetEffects } from './store/effects/sheet.effects';
 import { TokenModule } from './token/token.module';
+import * as fromOngoingEffects from './store/reducers/ongoing-effects.reducer';
+import { OngoingEffectsEffects } from './store/effects/ongoing-effects.effects';
 
 @NgModule({
   declarations: [SheetComponent],
@@ -34,7 +36,8 @@ import { TokenModule } from './token/token.module';
     SkillsModule,
     TokenModule,
     StoreModule.forFeature(fromSheet.sheetFeatureKey, fromSheet.reducer),
-    EffectsModule.forFeature([SheetEffects]),
+    EffectsModule.forFeature([SheetEffects, OngoingEffectsEffects]),
+    StoreModule.forFeature(fromOngoingEffects.ongoingEffectsFeatureKey, fromOngoingEffects.reducer),
   ],
   exports: [SheetComponent],
 })
