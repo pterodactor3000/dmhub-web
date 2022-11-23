@@ -36,13 +36,4 @@ export class SheetEffects {
     },
     { dispatch: false }
   );
-
-  loadOngoingEffects = createEffect(() => {
-    return this.actions.pipe(
-      ofType(sheetActions.loadOngoingEffects),
-      switchMap(({ params }) => {
-        // TODO: finish it!
-      })
-    );
-  });
 }

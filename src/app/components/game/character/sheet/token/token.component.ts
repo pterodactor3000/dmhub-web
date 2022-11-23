@@ -9,6 +9,7 @@ import {
   ResponsesTypes,
   ImageResponse,
   QueryParams,
+  SheetDataType,
 } from '@definitions/types';
 import { HttpService } from '@services/http.service';
 import { LocalService } from '@services/local.service';
@@ -20,16 +21,16 @@ import { LocalService } from '@services/local.service';
 })
 export class TokenComponent extends BaseComponent implements OnInit {
   private _gameid!: string;
-  private _tokenData!: TokenData;
+  private _tokenData!: SheetDataType;
   private _appearance!: Appearance;
 
-  @Input() set tokenData(value: TokenData) {
-    this._tokenData = value;
-    this._appearance = value.appearance as Appearance;
+  @Input() set tokenData(value: SheetDataType) {
+    this._tokenData = value as TokenData;
+    this._appearance = (value as TokenData).appearance as Appearance;
   }
 
   get tokenData(): TokenData {
-    return this._tokenData;
+    return this._tokenData as TokenData;
   }
 
   get appearance(): Appearance {

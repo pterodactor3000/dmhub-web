@@ -3,7 +3,7 @@ import {
   GameResponseKeys,
   CharacterResponseKeys,
   ErrorResponseKeys,
-  OngoingEffectResponseKeys,
+  OngoingEffectsResponseKeys,
 } from '../keys/keys.response';
 import { DataObject, Guid } from './types';
 import {
@@ -23,7 +23,7 @@ export type ResponsesTypes =
   | GameResponse
   | ErrorResponse
   | CharacterResponse
-  | OngoingEffectResponse;
+  | OngoingEffectsListResponse;
 
 /* Response types */
 export type DataObjectsResponse = {
@@ -52,13 +52,17 @@ export type ImageResponse = {
   url: string;
 };
 
-export type OngoingEffectResponse = {
-  [key in OngoingEffectResponseKeys]?:
+export type OngoingEffectsListResponse = {
+  [key: Guid]: OngoingEffectsResponse;
+};
+
+export type OngoingEffectsResponse = {
+  [key in OngoingEffectsResponseKeys]?:
     | boolean
     | string
     | Guid
-    | EffectModifiers[]
-    | OngoingEffectDisplay;
+    | OngoingEffectDisplay
+    | { [key: string]: EffectModifiers };
 };
 
 export type QueryParams = {

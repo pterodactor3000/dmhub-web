@@ -1,5 +1,6 @@
 import {
   BgColorObjectKeys,
+  CharacterSheetFieldKeys,
   EffectModifierResistanceKeys,
   ModifiersKeys,
 } from './../keys/keys.character.d';
@@ -51,8 +52,10 @@ export type Class = {
 };
 
 export type SheetData = {
-  [key in CharacterSheetFieldDataKeys]?: TokenData | OngoingEffectsData;
+  [key in CharacterSheetFieldDataKeys]?: SheetDataType;
 };
+
+export type SheetDataType = TokenData | OngoingEffectsData;
 
 export type TokenData = {
   [key in TokenKeys]: Appearance | Class[] | string;
