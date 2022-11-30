@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { OngoingEffectsData, SheetDataType } from '@definitions/types';
 
 @Component({
   selector: 'wbhb-conditions',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./conditions.component.scss'],
 })
 export class ConditionsComponent {
-  constructor() {}
+  private _ongoingEffectsData!: SheetDataType;
+
+  @Input() set ongoingEffectsData(value: SheetDataType) {
+    this._ongoingEffectsData = value as OngoingEffectsData[];
+  }
+
+  get ongoingEffectsData(): OngoingEffectsData[] {
+    return this._ongoingEffectsData as OngoingEffectsData[];
+  }
 }

@@ -24,7 +24,7 @@ export type GameResponseKeys =
   | 'descriptionDetails'
   | 'ownerDisplayName';
 export type ErrorResponseKeys = 'message' | 'type';
-export type OngoingEffectsResponseKeys =
+export type OngoingEffectsListResponseKeys =
   | '__typeName'
   | '_luaTable'
   | 'canEndWithAction'

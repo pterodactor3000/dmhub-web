@@ -26,6 +26,7 @@ import { UpdateModule } from './components/update/update.module';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
+import { HelperService } from '@services/helper.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -57,6 +58,7 @@ import { EffectsModule } from '@ngrx/effects';
   providers: [
     HttpService,
     LocalService,
+    HelperService,
     AngularFireAuthGuard,
     { provide: API_URL, useValue: environment.baseUrl },
     { provide: HTTP_INTERCEPTORS, useExisting: LoaderInterceptor, multi: true },

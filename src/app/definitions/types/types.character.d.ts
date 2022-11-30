@@ -3,6 +3,7 @@ import {
   CharacterSheetFieldKeys,
   EffectModifierResistanceKeys,
   ModifiersKeys,
+  OngoingEffectsDataKeys,
 } from './../keys/keys.character.d';
 import {
   NotesKeys,
@@ -55,14 +56,20 @@ export type SheetData = {
   [key in CharacterSheetFieldDataKeys]?: SheetDataType;
 };
 
-export type SheetDataType = TokenData | OngoingEffectsData;
+export type SheetDataType = TokenData | OngoingEffectsData[];
 
 export type TokenData = {
   [key in TokenKeys]: Appearance | Class[] | string;
 };
 
 export type OngoingEffectsData = {
-  [key in OngoingEffectsKeys]: Guid | number | { time: number };
+  [key in OngoingEffectsDataKeys]:
+    | boolean
+    | Guid
+    | number
+    | string
+    | OngoingEffectDisplay
+    | EffectModifiers[];
 };
 
 export type OngoingEffectDisplay = {

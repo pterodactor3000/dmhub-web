@@ -1,3 +1,4 @@
+import { OngoingEffectsListResponseKeys } from './keys.response.d';
 /* Keys regarding character data */
 export type CharacterKeys = 'name' | 'owner' | 'summaryDescription' | 'id';
 export type AppearanceKeys =
@@ -51,6 +52,16 @@ export type CharacterDetailsKeys =
   | 'notes'
   | 'preparedSpells';
 export type OngoingEffectsKeys = 'id' | 'ongoingEffectId' | 'stacks' | 'time';
+export type OngoingEffectsDataKeys = Exclude<
+  OngoingEffectsListResponseKeys,
+  | '__typeName'
+  | '_luaTable'
+  | 'ctime'
+  | 'custom'
+  | 'hidden'
+  | 'implementation'
+  | 'mtime'
+>;
 export type OngoingEffectDisplayKeys =
   | 'bgcolor'
   | 'blend'
