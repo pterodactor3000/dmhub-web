@@ -3,7 +3,7 @@ import {
   GameResponseKeys,
   CharacterResponseKeys,
   ErrorResponseKeys,
-  OngoingEffectsResponseKeys,
+  OngoingEffectsListResponseKeys,
 } from '../keys/keys.response';
 import { DataObject, Guid } from './types';
 import {
@@ -57,12 +57,17 @@ export type OngoingEffectsListResponse = {
 };
 
 export type OngoingEffectsResponse = {
-  [key in OngoingEffectsResponseKeys]?:
+  [key in OngoingEffectsListResponseKeys]?:
     | boolean
+    | number
     | string
     | Guid
     | OngoingEffectDisplay
-    | { [key: string]: EffectModifiers };
+    | OngoingEffectModifier;
+};
+
+export type OngoingEffectModifier = {
+  [key: string]: EffectModifiers;
 };
 
 export type QueryParams = {

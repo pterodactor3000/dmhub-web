@@ -5,7 +5,8 @@
       <wbhb-token *ngIf="sheetData.tokenData" class="sheet__token" [tokenData]="sheetData.tokenData">
       </wbhb-token>
 
-      <wbhb-conditions class="sheet__conditions"></wbhb-conditions>
+      <wbhb-conditions *ngIf="sheetData.ongoingEffectsData" class="sheet__conditions"
+        [ongoingEffectsData]="sheetData.ongoingEffectsData"></wbhb-conditions>
       <wbhb-list class="sheet__defenses"></wbhb-list>
       <wbhb-proficiencies class="sheet__proficiencies"></wbhb-proficiencies>
 
