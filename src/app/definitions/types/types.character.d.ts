@@ -9,6 +9,7 @@ import {
   NotesKeys,
   TypeValueKeys,
   InputAdditionalFieldsKeys,
+  KeyValueKeys,
 } from '../keys/keys';
 import {
   CharacterKeys,
@@ -22,7 +23,7 @@ import {
   OngoingEffectsKeys,
   OngoingEffectDisplayKeys,
 } from '../keys/keys.character';
-import { Guid } from './types';
+import { Guid, KeyValueType } from './types';
 
 export type Character = {
   [key in CharacterKeys]: string;
@@ -56,11 +57,13 @@ export type SheetData = {
   [key in CharacterSheetFieldDataKeys]?: SheetDataType;
 };
 
-export type SheetDataType = TokenData | OngoingEffectsData[];
+export type SheetDataType = TokenData | OngoingEffectsData[] | AttributeData[];
 
 export type TokenData = {
   [key in TokenKeys]: Appearance | Class[] | string;
 };
+
+export type AttributeData = KeyValueType<AttributesKeys>;
 
 export type OngoingEffectsData = {
   [key in OngoingEffectsDataKeys]:

@@ -14,6 +14,8 @@ import {
   EffectModifiers,
   OngoingEffectsData,
   OngoingEffectModifier,
+  Attributes,
+  AttributeData,
 } from '@definitions/types';
 import { Store } from '@ngrx/store';
 import { selectSheet } from './store/selectors/sheet.selectors';
@@ -46,6 +48,11 @@ export class SheetComponent implements OnInit {
             classes: this.character.classes as Class[],
             raceid: this.character.raceid as string,
           } as TokenData;
+
+          this.sheetData['attributesData'] =
+            this.helper.mapObjectToArrayWithKeys<Attributes, AttributeData>(
+              this.character.baseAttributes as Attributes
+            );
 
           return this.sheetData;
         }
