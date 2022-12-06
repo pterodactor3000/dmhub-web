@@ -1,7 +1,13 @@
+import { KeyValueKeys } from './../keys/keys.d';
 import { FormControl } from '@angular/forms';
 
 import { DataObjectKeys, InputKeys, MessageTypeKeys } from '../keys/keys';
 import { TypeValue } from './types.character';
+
+/* Generics and mapped types */
+export type KeyValueType<Type> = {
+  [key in KeyValueKeys]: string | number | Type;
+};
 
 export type DataObject = {
   [key in DataObjectKeys]: string;

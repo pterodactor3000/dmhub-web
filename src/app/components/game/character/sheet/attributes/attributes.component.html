@@ -1,1 +1,5 @@
-<wbhb-attribute></wbhb-attribute>
+<section class="attributes">
+  <wbhb-attribute class="" *ngFor="let attribute of attributesData" [key]="attribute.key.toString()"
+    [value]="attribute.value.toString()">
+  </wbhb-attribute>
+</section>

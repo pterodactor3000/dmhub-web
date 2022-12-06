@@ -2,6 +2,7 @@
 export type QueryParamsKeys = 'gameid' | 'type' | 'id' | 'pretty';
 export type DataObjectKeys = 'object' | 'desc';
 export type NotesKeys = 'text' | 'title';
+export type KeyValueKeys = 'key' | 'value';
 export type InputKeys =
   | 'color'
   | 'custom'

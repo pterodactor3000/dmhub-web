@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'wbhb-attribute',
@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./attribute.component.scss'],
 })
 export class AttributeComponent {
-  constructor() {}
+  @Input() key!: string;
+  @Input() value!: string;
 }

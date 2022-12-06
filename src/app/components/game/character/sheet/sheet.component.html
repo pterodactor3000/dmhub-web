@@ -5,29 +5,31 @@
       <wbhb-token *ngIf="sheetData.tokenData" class="sheet__token" [tokenData]="sheetData.tokenData">
       </wbhb-token>
 
-      <wbhb-conditions *ngIf="sheetData.ongoingEffectsData" class="sheet__conditions"
+      <!-- <wbhb-conditions *ngIf="sheetData.ongoingEffectsData" class="sheet__conditions"
         [ongoingEffectsData]="sheetData.ongoingEffectsData"></wbhb-conditions>
       <wbhb-list class="sheet__defenses"></wbhb-list>
-      <wbhb-proficiencies class="sheet__proficiencies"></wbhb-proficiencies>
+      <wbhb-proficiencies class="sheet__proficiencies"></wbhb-proficiencies> -->
 
     </div>
     <div class="grid__column--9--bd grid__column--4--bm grid__column-start--4--bd sheet--right">
       <div class="grid">
 
-        <wbhb-attributes class="grid__column--12--bd grid__column--4--bm sheet__attributes"></wbhb-attributes>
+        <wbhb-attributes *ngIf="sheetData.attributesData"
+          class="grid__column--12--bd grid__column--4--bm sheet__attributes"
+          [attributesData]="sheetData.attributesData"></wbhb-attributes>
 
         <div class="grid__column--12--bd grid__column--4--bm sheet--middle">
           <div class="grid">
             <div class="grid__column--3--bd grid__column--4--bm sheet--middle--left">
 
-              <wbhb-skills class="sheet__saving-throws"></wbhb-skills>
+              <!-- <wbhb-skills class="sheet__saving-throws"></wbhb-skills>
               <wbhb-list class="sheet__passives"></wbhb-list>
-              <wbhb-resources class="sheet__resources"></wbhb-resources>
+              <wbhb-resources class="sheet__resources"></wbhb-resources> -->
 
             </div>
             <div class="grid__column--3--bd grid__column-start--4--bd grid__column--4--bm sheet--middle--center">
 
-              <wbhb-skills class="sheet__skills"></wbhb-skills>
+              <!-- <wbhb-skills class="sheet__skills"></wbhb-skills> -->
 
             </div>
             <div class="grid__column--6--bd grid__column-start--7--bd grid__column--4--bm sheet--middle--right">
@@ -35,17 +37,17 @@
                 <div class="grid__column--12--bd grid__column--4--bm sheet--middle--right--top">
                   <div class="grid">
 
-                    <wbhb-armor-class-speed class="grid__column--6--bd grid__column--2--bm sheet__ac-speed">
+                    <!-- <wbhb-armor-class-speed class="grid__column--6--bd grid__column--2--bm sheet__ac-speed">
                     </wbhb-armor-class-speed>
                     <wbhb-hitpoints
                       class="grid__column--6--bd grid__column-start--7--bd grid__column-start--3--bm grid__column--2--bm sheet__hp">
-                    </wbhb-hitpoints>
+                    </wbhb-hitpoints> -->
 
                   </div>
                 </div>
                 <div class="grid__column--12--bd grid__column--4--bm sheet--middle--right--bottom">
 
-                  <wbhb-actions-features-notes class="sheet__actions-feats-notes"></wbhb-actions-features-notes>
+                  <!-- <wbhb-actions-features-notes class="sheet__actions-feats-notes"></wbhb-actions-features-notes> -->
 
                 </div>
               </div>

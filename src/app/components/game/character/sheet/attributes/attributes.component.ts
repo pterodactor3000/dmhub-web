@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { AttributeData, SheetDataType } from '@definitions/types';
 
 @Component({
   selector: 'wbhb-attributes',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./attributes.component.scss'],
 })
 export class AttributesComponent {
-  constructor() {}
+  private _attributesData!: AttributeData[];
+
+  @Input() set attributesData(value: SheetDataType) {
+    this._attributesData = value as AttributeData[];
+  }
+
+  get attributesData(): AttributeData[] {
+    return this._attributesData;
+  }
 }
