@@ -2,9 +2,9 @@
 @import 'bootstrap/scss/bootstrap';
 
 @import '_functions';
+@import '_fonts';
 @import '_ripple';
 @import '_scrollbar';
-@import '_fonts';
 @import '_grid';
 @import '_colors';
 @import '_shadows';
@@ -13,6 +13,7 @@
 html,
 body {
   height: 100%;
+  font-size: 16px;
 }
 body {
   background-color: var(--body-background);
@@ -37,7 +38,7 @@ body {
     section {
       .section-heading {
         &__title {
-          font-size: 2rem;
+          font-size: var(--font-size-large);
           color: var(--header-red);
           margin: 5px auto;
         }
@@ -53,14 +54,14 @@ body {
         align-content: center;
 
         .error__message {
-          font-size: 3rem;
+          font-size: var(--font-size-huge);
           color: var(--header-red);
           margin: 1rem 0;
           text-align: center;
         }
 
         .error__link {
-          font-size: 2rem;
+          font-size: var(--font-size-large);
           text-decoration: none;
         }
       }

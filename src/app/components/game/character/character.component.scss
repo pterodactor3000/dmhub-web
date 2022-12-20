@@ -12,11 +12,11 @@
   }
 
   &__name {
-    font-size: 3rem;
+    font-size: var(--font-size-huge);
   }
 
   &__summary {
-    font-size: 1.5rem;
+    font-size: var(--font-size-small);
   }
 
   &:hover {

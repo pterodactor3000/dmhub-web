@@ -1,4 +1,4 @@
-@import '_mixins';
+@import './_functions';
 
 @font-face {
   font-family: 'Kleymisska';
@@ -34,10 +34,21 @@
 }
 
 :root {
+  @debug rem(13);
   --font-size-tiny: rem(12);
   --font-size-small: rem(16);
   --font-size-medium: rem(24);
   --font-size-large: rem(32);
   --font-size-huge: rem(48);
   --font-size-gargantuan: rem(64);
+
+  @include layout(desktop) {
+    @debug rem(13);
+    --font-size-tiny: rem(14);
+    --font-size-small: rem(18);
+    --font-size-medium: rem(28);
+    --font-size-large: rem(36);
+    --font-size-huge: rem(52);
+    --font-size-gargantuan: rem(68);
+  }
 }

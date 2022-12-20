@@ -90,7 +90,6 @@ export class SheetComponent implements OnInit {
           }
         ) as OngoingEffectsData[];
 
-        console.info(this.sheetData);
         return this.sheetData;
       })
     );

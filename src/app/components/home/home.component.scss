@@ -1,4 +1,4 @@
-@import "../../../styles/mixins";
+@import '../../../styles/_functions';
 
 .home-navigation {
   width: 100%;
@@ -10,18 +10,14 @@
     background-blend-mode: multiply;
     transition: all 0.5s;
     z-index: 2;
-    font-family: "Bontang";
-    font-size: 3rem;
+    font-family: 'Bontang';
+    font-size: var(--font-size-gargantuan);
     color: #f0f0f0;
     text-shadow: 0 0 2rem #3e5151;
     text-decoration: none;
     display: flex;
     align-items: center;
     justify-content: center;
-
-    @include layout(desktop) {
-      font-size: 6rem;
-    }
 
     &:hover {
       transform: scale(1.1);
@@ -31,16 +27,12 @@
 
   &__game {
     background: #2c3e50, var(--cauldron-url);
-    background: -webkit-linear-gradient(to right, #fd746c, #2c3e50),
-      var(--cauldron-url);
     background: linear-gradient(to right, #fd746c, #2c3e50), var(--cauldron-url);
     background-size: cover;
   }
 
   &__module {
     background: #3e5151, var(--annihilation-url);
-    background: -webkit-linear-gradient(to right, #decba4, #3e5151),
-      var(--annihilation-url);
     background: linear-gradient(to right, #decba4, #3e5151),
       var(--annihilation-url);
     background-size: cover;
