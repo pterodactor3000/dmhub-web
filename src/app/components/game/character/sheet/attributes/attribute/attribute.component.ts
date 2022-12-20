@@ -6,6 +6,20 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./attribute.component.scss'],
 })
 export class AttributeComponent {
-  @Input() key!: string;
-  @Input() value!: string;
+  private _value!: number;
+  private _modifier!: number;
+
+  @Input() key!: string | number;
+  @Input() set value(value: string | number) {
+    this._value = value as number;
+    this._modifier = Math.floor((this._value - 10) / 2);
+  }
+
+  get value(): number {
+    return this._value;
+  }
+
+  get modifier(): number {
+    return this._modifier;
+  }
 }

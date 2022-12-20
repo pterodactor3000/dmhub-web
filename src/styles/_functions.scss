@@ -1,3 +1,38 @@
+@import 'bootstrap/scss/mixins';
+
+$breakpoints: (
+  mobile: 375px,
+  desktop: 1248px,
+  wide: 1440px,
+);
+
+// mobile-first breakpoint mixin
+@mixin layout($breakpoint: mobile, $key: min, $orientation: false) {
+  $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+  @if ($orientation) {
+    @if $key ==min {
+      @media (#{$key}-width: $breakpoint-value) and (orientation: $orientation) {
+        @content;
+      }
+    } @else {
+      @media (#{$key}-width: #{$breakpoint-value - 1}) and (orientation: $orientation) {
+        @content;
+      }
+    }
+  } @else {
+    @if $key ==min {
+      @media (#{$key}-width: $breakpoint-value) {
+        @content;
+      }
+    } @else {
+      @media (#{$key}-width: #{$breakpoint-value - 1}) {
+        @content;
+      }
+    }
+  }
+}
+
 // rem conversion
 $base-size: 16;
 
@@ -5,6 +40,6 @@ $base-size: 16;
   @return $num / ($num * 0 + 1);
 }
 
-@function rem($size, $context: $base-size) {
-  @return #{$size} / #{$context} * 1rem;
+@function rem($size) {
+  @return calc($size / $base-size) * 1rem;
 }
