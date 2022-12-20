@@ -2,7 +2,7 @@
   "name": "web-hub",
   "version": "0.1.0",
   "scripts": {
-    "set:env": "ts-node ./src/environments/set-env.ts",
+    "set:env": "npx ts-node ./src/environments/set-env.ts",
     "ng": "ng",
     "start": "npm run set:env && ng serve",
     "start:server": "http-server -p 4550 -c-1 -P http://localhost:4550? dist/web-hub",
