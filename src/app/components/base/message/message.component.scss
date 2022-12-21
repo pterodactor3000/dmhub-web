@@ -1,6 +1,8 @@
+@import 'src/styles/extendables';
+
 .message {
   position: absolute;
-  width: -webkit-fill-available;
+  @extend .width-fill;
 
   & > ngb-alert {
     margin-block-end: 0;

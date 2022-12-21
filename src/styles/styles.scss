@@ -1,14 +1,15 @@
+// @use 'modules';
+@use 'functions';
+
+@import 'extendables';
+@import 'variables';
+@import 'fonts';
+@import 'ripple';
+@import 'scrollbar';
+@import 'grid';
+
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
-
-@import '_functions';
-@import '_fonts';
-@import '_ripple';
-@import '_scrollbar';
-@import '_grid';
-@import '_colors';
-@import '_shadows';
-@import '_backgrounds';
 
 html,
 body {
@@ -21,15 +22,16 @@ body {
   font-family: 'Draconis';
 
   .content {
-    width: -webkit-fill-available;
+    @extend .width-fill;
+
     padding: 0 2rem;
     margin-top: 3rem;
 
     &--full-height {
-      height: -webkit-fill-available;
+      @extend .height-fill;
     }
 
-    @include layout(desktop) {
+    @include functions.layout(desktop) {
       margin: 0 15rem;
       margin-top: 4rem;
       padding: 2rem;

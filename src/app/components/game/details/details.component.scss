@@ -1,7 +1,9 @@
+@import 'src/styles/extendables';
+
 .content {
   section {
     img {
-      max-width: -webkit-fill-available;
+      @extend .width-fill;
     }
   }
 }

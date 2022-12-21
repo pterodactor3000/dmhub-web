@@ -1,11 +1,14 @@
+@import 'src/styles/extendables';
+
 :host {
-  width: -webkit-fill-available;
+  @extend .width-fill;
 
   button {
-    font-family: "Bontang";
+    @extend .width-fill;
+
+    font-family: 'Bontang';
     cursor: pointer;
     height: 3rem;
-    width: -webkit-fill-available;
     background-color: var(--button-primary);
     border: var(--default-border);
     box-shadow: var(--card-shadow);
