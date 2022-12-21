@@ -1,5 +1,7 @@
+@import 'src/styles/extendables';
+
 :host {
-  width: -webkit-fill-available;
+  @extend .width-fill;
 
   .input {
     display: flex;
@@ -7,10 +9,12 @@
     align-items: center;
 
     input {
+      @extend .width-fill;
+
       border: var(--default-border);
       box-shadow: var(--card-shadow);
       height: 4rem;
-      width: -webkit-fill-available;
+
       text-align: center;
       font-family: inherit;
       cursor: text;
@@ -19,9 +23,6 @@
       &:focus,
       &:valid {
         outline: none;
-      }
-
-      .-webkit-search-cancel-button {
       }
     }
 

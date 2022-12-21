@@ -1,4 +1,4 @@
-@import '_functions';
+@use 'functions';
 
 .grid {
   --column-start: 1;
@@ -10,7 +10,7 @@
     gap: 0;
   }
 
-  @include layout(desktop) {
+  @include functions.layout(desktop) {
     grid-template-columns: repeat(12, 1fr);
     gap: 20px;
 
@@ -23,7 +23,7 @@
     grid-column: var(--column-start) / span var(--column-span);
   }
 
-  @include layout(desktop, max) {
+  @include functions.layout(desktop, max) {
     @for $i from 1 through 4 {
       &__column--#{$i}--bm {
         --column-span: #{$i};
@@ -35,7 +35,7 @@
     }
   }
 
-  @include layout(desktop) {
+  @include functions.layout(desktop) {
     @for $i from 1 through 12 {
       &__column--#{$i}--bd {
         --column-span: #{$i};
@@ -58,7 +58,7 @@
     }
   }
 
-  @include layout(desktop) {
+  @include functions.layout(desktop) {
     @for $i from 5 through 12 {
       &__column--#{$i} {
         --column-span: #{$i};

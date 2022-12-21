@@ -1,8 +1,11 @@
+@import 'src/styles/extendables';
+
 form {
-  height: -webkit-fill-available;
+  @extend .height-fill;
 
   .login-panel {
-    height: -webkit-fill-available;
+    @extend .height-fill;
+
     justify-items: center;
     align-content: center;
 

@@ -1,11 +1,14 @@
+@import 'src/styles/extendables';
+
 :host {
   form {
-    height: -webkit-fill-available;
+    @extend .height-fill;
 
     .search-panel {
+      @extend .height-fill;
+
       justify-items: center;
       align-content: center;
-      height: -webkit-fill-available;
     }
   }
 }

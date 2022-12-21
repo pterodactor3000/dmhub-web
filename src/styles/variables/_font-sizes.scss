@@ -1,0 +1,19 @@
+@use '../functions';
+
+:root {
+  --font-size-tiny: functions.rem(12);
+  --font-size-small: functions.rem(16);
+  --font-size-medium: functions.rem(24);
+  --font-size-large: functions.rem(32);
+  --font-size-huge: functions.rem(48);
+  --font-size-gargantuan: functions.rem(64);
+
+  @include functions.layout(desktop) {
+    --font-size-tiny: functions.rem(14);
+    --font-size-small: functions.rem(18);
+    --font-size-medium: functions.rem(28);
+    --font-size-large: functions.rem(36);
+    --font-size-huge: functions.rem(52);
+    --font-size-gargantuan: functions.rem(68);
+  }
+}

@@ -1,4 +1,5 @@
-@import '../../../../styles/_functions';
+@use 'src/styles/functions';
+@import 'src/styles/extendables';
 
 .header {
   height: 3rem;
@@ -9,18 +10,31 @@
   left: 0;
   display: flex;
 
-  @include layout(desktop) {
+  @include functions.layout(desktop) {
     height: 4rem;
   }
 
   &__content {
-    height: -webkit-fill-available;
+    @extend .height-fill;
+    @extend .width-fill;
+
     display: flex;
     justify-content: space-between;
-    width: -webkit-fill-available;
+
+    .back-button {
+      width: 4rem;
+      aspect-ratio: 1/1;
+      padding: 1rem;
+      color: var(--button-primary);
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
 
     .logout-button {
-      height: inherit;
+      width: 4rem;
       aspect-ratio: 1/1;
       padding: 1rem;
       border: none;
