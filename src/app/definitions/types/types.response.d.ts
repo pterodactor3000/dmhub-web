@@ -1,11 +1,13 @@
+import { AttributesKeys } from '@definitions/keys';
 import { QueryParamsKeys } from '../keys/keys';
 import {
   GameResponseKeys,
   CharacterResponseKeys,
   ErrorResponseKeys,
   OngoingEffectsListResponseKeys,
+  ClassesListResponseKeys,
 } from '../keys/keys.response';
-import { DataObject, Guid } from './types';
+import { DataObject, Guid, NumberedObjectType } from './types';
 import {
   Character,
   Note,
@@ -14,6 +16,7 @@ import {
   Attributes,
   EffectModifiers,
   OngoingEffectDisplay,
+  ClassLevelsList,
 } from './types.character';
 
 /* Key for general get */
@@ -23,7 +26,8 @@ export type ResponsesTypes =
   | GameResponse
   | ErrorResponse
   | CharacterResponse
-  | OngoingEffectsListResponse;
+  | OngoingEffectsListResponse
+  | ClassesListResponse;
 
 /* Response types */
 export type DataObjectsResponse = {
@@ -56,6 +60,10 @@ export type OngoingEffectsListResponse = {
   [key: Guid]: OngoingEffectsResponse;
 };
 
+export type ClassesListResponse = {
+  [key: Guid]: ClassesResponse;
+};
+
 export type OngoingEffectsResponse = {
   [key in OngoingEffectsListResponseKeys]?:
     | boolean
@@ -64,6 +72,16 @@ export type OngoingEffectsResponse = {
     | Guid
     | OngoingEffectDisplay
     | OngoingEffectModifier;
+};
+
+export type ClassesResponse = {
+  [key in ClassesListResponseKeys]?:
+    | boolean
+    | string
+    | number
+    | Guid
+    | ClassLevelsList
+    | NumberedObjectType<AttributesKeys>;
 };
 
 export type OngoingEffectModifier = {

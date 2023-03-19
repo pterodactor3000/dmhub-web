@@ -47,3 +47,12 @@ export type OngoingEffectsListResponseKeys =
   | 'stackable'
   | 'statusEffect'
   | 'transformation';
+
+export type ClassesListResponseKeys =
+  | 'hit_die'
+  | 'id'
+  | 'levels'
+  | 'mtime'
+  | 'name'
+  | 'savingThrows'
+  | 'spellcastingAttr';

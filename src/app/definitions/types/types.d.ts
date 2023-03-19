@@ -9,6 +9,14 @@ export type KeyValueType<Type> = {
   [key in KeyValueKeys]: string | number | Type;
 };
 
+export type NumberedObjectType<Type> = {
+  [key: number]: Type;
+};
+
+export type StringBoolType = {
+  [key: string]: boolean;
+};
+
 export type DataObject = {
   [key in DataObjectKeys]: string;
 };

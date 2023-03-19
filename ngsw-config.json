@@ -26,7 +26,7 @@
         ]
       }
     }
-  ], 
+  ],
   "dataGroups": [
     {
       "name": "longCacheHttpResponses",
@@ -44,7 +44,7 @@
         "**/*type=image*",
         "**/*type=item*",
         "**/*type=language*",
-        "**/*type=objects*",      
+        "**/*type=objects*",
         "**/*type=ongoingeffect*",
         "**/*type=party*",
         "**/*type=race*",
@@ -54,12 +54,21 @@
         "**/*type=subclass*",
         "**/*type=subrace*"
       ],
-      "cacheConfig": { "maxAge": "7d", "maxSize": 100, "strategy": "performance" }
+      "cacheConfig": {
+        "maxAge": "7d",
+        "maxSize": 100,
+        "strategy": "performance"
+      }
     },
     {
       "name": "shortCacheHttpResponses",
       "urls": ["**/*type=character*"],
-      "cacheConfig": { "maxAge": "2d", "maxSize": 100, "strategy": "freshness", "timeout": "5s" }
+      "cacheConfig": {
+        "maxAge": "2d",
+        "maxSize": 100,
+        "strategy": "freshness",
+        "timeout": "5s"
+      }
     }
   ]
 }

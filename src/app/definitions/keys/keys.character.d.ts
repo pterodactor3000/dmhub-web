@@ -1,4 +1,6 @@
+import { LevelKeysNumbers } from './keys';
 import { OngoingEffectsListResponseKeys } from './keys.response.d';
+
 /* Keys regarding character data */
 export type CharacterKeys = 'name' | 'owner' | 'summaryDescription' | 'id';
 export type AppearanceKeys =
@@ -85,3 +87,43 @@ export type ModifiersKeys =
   | 'sourceguid'
   | 'subtype';
 export type EffectModifierResistanceKeys = 'apply' | 'damageType';
+
+// Classes data
+export type ClassLevelsListKeys =
+  | 'primary'
+  | 'multiclass'
+  | `level-${LevelKeysNumbers}`;
+export type ClassLevelKeys = 'domains' | 'features';
+export type CharacterFeatureChoiceKeys =
+  | 'allowDuplicateChoices'
+  | 'classid'
+  | 'description'
+  | 'guid'
+  | 'name'
+  | 'numChoices'
+  | 'options'
+  | 'prefab'
+  | 'source';
+export type CharacterFeatureKeys =
+  | 'classid'
+  | 'description'
+  | 'domains'
+  | 'guid'
+  | 'modifiers'
+  | 'name'
+  | 'source';
+export type ClassLevelFeatureDataKeys =
+  | CharacterFeatureKeys
+  | CharacterFeatureChoiceKeys;
+export type CharacterModifierKeys =
+  | 'behavior'
+  | 'description'
+  | 'domains'
+  | 'guid'
+  | 'name'
+  | 'proficiency'
+  | 'skills'
+  | 'source'
+  | 'sourceguid'
+  | 'subtype';
+export type FeatureModifierSkillKeys = '';

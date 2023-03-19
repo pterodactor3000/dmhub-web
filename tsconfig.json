@@ -19,9 +19,9 @@
     "module": "es2020",
     "lib": ["es2020", "dom"],
     "paths": {
-      "@env": ["src/environments/environment"],
       "@base/*": ["src/app/components/base/*"],
       "@definitions/*": ["src/app/definitions/*"],
+      "@env": ["src/environments/environment"],
       "@services/*": ["src/app/services/*", "src/app/interceptors/*"]
     }
   },

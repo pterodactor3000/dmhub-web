@@ -14,11 +14,13 @@ import { ResourcesModule } from './resources/resources.module';
 import { SheetComponent } from './sheet.component';
 import { SheetRoutingModule } from './sheet-routing.module';
 import { SkillsModule } from './skills/skills.module';
+import { TokenModule } from './token/token.module';
 import * as fromSheet from './store/reducers/sheet.reducer';
 import { SheetEffects } from './store/effects/sheet.effects';
-import { TokenModule } from './token/token.module';
 import * as fromOngoingEffects from './store/reducers/ongoing-effects.reducer';
 import { OngoingEffectsEffects } from './store/effects/ongoing-effects.effects';
+import * as fromClass from './store/reducers/class.reducer';
+import { ClassEffects } from './store/effects/class.effects';
 
 @NgModule({
   declarations: [SheetComponent],
@@ -36,8 +38,16 @@ import { OngoingEffectsEffects } from './store/effects/ongoing-effects.effects';
     SkillsModule,
     TokenModule,
     StoreModule.forFeature(fromSheet.sheetFeatureKey, fromSheet.reducer),
-    EffectsModule.forFeature([SheetEffects, OngoingEffectsEffects]),
-    StoreModule.forFeature(fromOngoingEffects.ongoingEffectsFeatureKey, fromOngoingEffects.reducer),
+    StoreModule.forFeature(fromClass.classFeatureKey, fromClass.reducer),
+    StoreModule.forFeature(
+      fromOngoingEffects.ongoingEffectsFeatureKey,
+      fromOngoingEffects.reducer
+    ),
+    EffectsModule.forFeature([
+      SheetEffects,
+      OngoingEffectsEffects,
+      ClassEffects,
+    ]),
   ],
   exports: [SheetComponent],
 })

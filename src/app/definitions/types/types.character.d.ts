@@ -1,15 +1,19 @@
 import {
   BgColorObjectKeys,
-  CharacterSheetFieldKeys,
+  ClassLevelKeys,
+  ClassLevelsListKeys,
   EffectModifierResistanceKeys,
+  CharacterModifierKeys,
+  FeatureModifierSkillKeys,
   ModifiersKeys,
   OngoingEffectsDataKeys,
+  ClassLevelFeatureDataKeys,
+  CharacterFeatureChoiceKeys,
 } from './../keys/keys.character.d';
 import {
   NotesKeys,
   TypeValueKeys,
   InputAdditionalFieldsKeys,
-  KeyValueKeys,
 } from '../keys/keys';
 import {
   CharacterKeys,
@@ -20,10 +24,14 @@ import {
   CharacterSheetFieldDataKeys,
   TokenKeys,
   PortraitKeys,
-  OngoingEffectsKeys,
   OngoingEffectDisplayKeys,
 } from '../keys/keys.character';
-import { Guid, KeyValueType } from './types';
+import {
+  Guid,
+  KeyValueType,
+  NumberedObjectType,
+  StringBoolType,
+} from './types';
 
 export type Character = {
   [key in CharacterKeys]: string;
@@ -93,4 +101,39 @@ export type EffectModifierResistance = {
 
 export type Portrait = {
   [key in AppearanceKeys | PortraitKeys]: string | number | Offset;
+};
+
+// Classes types
+export type ClassLevelsList = {
+  [key in ClassLevelsListKeys]: ClassLevel;
+};
+
+export type ClassLevel = {
+  [key in ClassLevelKeys]:
+    | StringBoolType
+    | NumberedObjectType<CharacterFeature>;
+};
+
+// CharacterFeature
+export type CharacterFeature = {
+  [key in ClassLevelFeatureDataKeys]?:
+    | boolean
+    | string
+    | Guid
+    | StringBoolType
+    | NumberedObjectType<
+        CharacterModifier | CharacterFeatureChoice | CharacterFeature
+      >;
+};
+
+export type CharacterModifier = {
+  [key in CharacterModifierKeys]: string | Guid | StringBoolType;
+};
+
+export type CharacterFeatureChoice = {
+  [key in CharacterFeatureChoiceKeys]: boolean | number | string | Guid;
+};
+
+export type FeatureModifierSkill = {
+  [key in FeatureModifierSkillKeys]: boolean;
 };

@@ -13,6 +13,7 @@ import {
 } from '@definitions/types';
 import { HttpService } from '@services/http.service';
 import { LocalService } from '@services/local.service';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'wbhb-token',
@@ -23,6 +24,8 @@ export class TokenComponent extends BaseComponent implements OnInit {
   private _gameid!: string;
   private _tokenData!: SheetDataType;
   private _appearance!: Appearance;
+
+  // classResponseData: Observable<SheetData | null> = this.store.select(selectClass) // TODO: finish
 
   @Input() set tokenData(value: SheetDataType) {
     this._tokenData = value as TokenData;
@@ -47,6 +50,7 @@ export class TokenComponent extends BaseComponent implements OnInit {
 
   constructor(
     private service: HttpService,
+    private store: Store,
     private localService: LocalService
   ) {
     super();
